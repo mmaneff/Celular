@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#515254" >
+
+    <Button 
+            android:id="@+id/btnRegresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/botonvolver"
+            android:text="REGRESAR"
+            android:textColor="@color/white"
+            android:onClick="onReguresarClick" />
+    
+    <Button 
+            android:id="@+id/btnFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/iconofavorito"
+            android:text="FAVORITOS"
+            android:textColor="@color/white"
+            android:onClick="onFavoritosClick" />
+    
+    <Button 
+            android:id="@+id/btnBuscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_action_search"
+            android:text="BUSCAR"
+            android:textColor="@color/white"
+            android:onClick="onActionBarClick" />
+    
+    <Button 
+            android:id="@+id/btnMensaje"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/menumail"
+            android:text="MENSAJE"
+            android:textColor="@color/white"
+            android:onClick="onActionBarClick" />
+
+</LinearLayout>

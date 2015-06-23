@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   	<array name="categorias_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+    </array>
+    <array name="categorias_nombre">
+        <item>ALIMENTOS</item>
+        <item>AUTOMOTORES</item>
+        <item>BANCOS Y TARJETAS</item>
+        <item>BELLEZA</item>
+        <item>BOUTIQUE</item>
+        <item>CONSTRUCCION</item>
+        <item>DECORACION Y HOGAR</item>
+        <item>EDUCACION</item>
+        <item>EMERGENCIA</item>
+        <item>EVENTOS Y FIESTAS</item>
+        <item>GASTRONOMIA</item>
+        <item>IMPRENTA</item>
+        <item>PROFESIONALES</item>
+        <item>REGALERIA Y FLORERIA</item>
+        <item>SALUD</item>
+        <item>SEGURIDAD</item>
+        <item>SERVICIOS</item>
+        <item>SERVICIOS PUBLICOS</item>
+        <item>SHOPPINGS Y GALERIAS</item>
+        <item>TIEMPO LIBRE Y RECREACION</item>
+        <item>TRANSPORTE</item>
+        <item>TURISMO</item>
+    </array>
+    <array name="categorias_icono">
+        <item>@drawable/iconoalimentos</item>
+        <item>@drawable/iconoauto</item>
+        <item>@drawable/iconobanco</item>
+        <item>@drawable/iconobelleza</item>
+        <item>@drawable/iconoboutique</item>
+        <item>@drawable/iconoconstruccion</item>
+        <item>@drawable/iconohogar</item>
+        <item>@drawable/iconoeducacion</item>
+        <item>@drawable/iconoemergencia</item>
+        <item>@drawable/iconoeventosyfiestas</item>
+        <item>@drawable/iconogastronomia</item>
+        <item>@drawable/iconoimprenta</item>
+        <item>@drawable/iconoprofesionales</item>
+        <item>@drawable/iconoboutique</item>
+        <item>@drawable/iconosalud</item>
+        <item>@drawable/iconoseguridad</item>
+        <item>@drawable/iconoservicios</item>
+        <item>@drawable/iconoserviciospublicos</item>
+        <item>@drawable/iconoshopping</item>
+        <item>@drawable/iconotiempoyrecreacion</item>
+        <item>@drawable/iconotransportes</item>
+        <item>@drawable/iconoturismo</item>
+    </array>
+    <array name="categorias_color">
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+    </array> 
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout0"
+    style="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_color_amber"
+    android:orientation="horizontal" >
+    
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"        
+        android:layout_margin="20dp"
+        android:src="@drawable/botonllamar" />
+
+    <TextView
+        android:id="@+id/tvTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold"
+        android:text="@string/tvTextName"
+        android:textSize="@dimen/font_size_16"
+        android:textColor="@color/white" />
+
+</LinearLayout>

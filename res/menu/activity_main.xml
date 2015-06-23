@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@drawable/action_bar_menu" />
+    
+    <item
+        android:id="@+id/menu_save"
+        android:showAsAction="ifRoom"
+        android:icon="@android:drawable/alert_dark_frame"
+        android:title="guardar"/>
+ 
+    <item
+        android:id="@+id/menu_new"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/arrow_up_float"
+        android:title="menu_nuevo"/>
+    
+</menu>

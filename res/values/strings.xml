@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Busca Fácil</string>
+    <string name="app_name">Busca Fácil</string>
+    <string name="tvTitle">BUSCA FACIL</string>
+    <string name="etFiend">Buscar</string>
+    <string name="rdbButton1">Capital</string>
+    <string name="rdbButton2">Yerba Buena</string>
+    <string name="btnCategory">CATEGORIAS</string>
+    <string name="btnFavorite">FAVORITOS</string>
+    <string name="tvFiendMe">Encontranos en</string>
+    <string name="tvCercania">Cercania</string>
+    <string name="tvAddress">Domicilio</string>
+    <string name="tvCompany">Empresa</string>
+    <string name="tvTituloNegocios">Negocios</string>
+    <string name="tvTituloCategorias">Categorias</string>
+    <string name="tvTextName">Texto</string>
+    <string name="btnRegresar">REGRESAR</string>
+    <string name="btnLlamar">LLAMAR</string>
+    <string name="btnFavorito">FAVORITOS</string>
+    <string name="btnBuscar">BUSCAR</string>
+    <string name="btnMensaje">MENSAJE</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="emptyResults">No se encontraron resultados</string>
+ 
+      
+    <!--ESTO ES PARA MOSTRAR DATOS DE PRUEBA-->
+    <string name="tvRazonSocial1">EL CASTILLITO</string>
+    <string name="tvRazonSocial2">CASTILLOS INFLABLES Y MÁS</string>
+    <string name="tvDetalle">Empresa familiar dedicada al entretenimiento infantil y adulco con más de 15 años de trayectoria, brindando un servicio de calidad.</string>
+    <string name="tvDireccion">CARIOLA 184</string>
+    <string name="tvTelefono">0381 421-7117</string>
+    <string name="tvLocalidad">Yerba Buena</string>
+    <string name="tvHorario1">Horario de atención</string>
+    <string name="tvHorario2">09:00 a 17:00 hs</string>
+
+    
+    
+</resources>
