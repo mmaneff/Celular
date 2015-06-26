@@ -37,6 +37,6 @@
     <string name="tvHorario1">Horario de atención</string>
     <string name="tvHorario2">09:00 a 17:00 hs</string>
 
-    
+    <string name="app_id">BuscaFacil</string>
     
 </resources>

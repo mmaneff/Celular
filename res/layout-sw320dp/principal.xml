@@ -49,26 +49,20 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btnCapital"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="15dp"
-			android:background="@drawable/boton_redondo"            
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_size_22"
-            android:textStyle="bold"
-            android:text="Capital" />
-        
-        <Button
             android:id="@+id/btnYerbaBuena"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="15dp"
-			android:background="@drawable/boton_redondo"            
+            android:layout_height="40dp"
+            android:background="@color/blue_800"            
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_22"
+            android:textSize="@dimen/font_size_14"
             android:textStyle="bold"
             android:text="Yerba Buena" />
+        
+        <com.facebook.widget.LikeView
+	        android:id="@+id/like_view"
+	        android:layout_width="100dp"
+	        android:layout_height="40dp"	        
+	        android:layout_marginLeft="15dp" />
         
     </LinearLayout>
 

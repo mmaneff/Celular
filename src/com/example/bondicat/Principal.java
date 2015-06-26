@@ -2,6 +2,9 @@ package com.example.bondicat;
 
 import java.util.List;
 
+import com.facebook.Settings;
+import com.facebook.widget.LikeView;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -9,6 +12,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -38,17 +42,34 @@ public class Principal extends Activity {
     int contador;
 
     final String message = "Funcionalidad en construcción";
-
+    private static final String TAG = "FBLike";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
 
+        // To initialize Facebook SDK in your app
+        Settings.sdkInitialize(this);
+        // Get LikeView button
+        LikeView likeView = (LikeView) findViewById(R.id.like_view);
+        // Set the object for which you want to get likes from your users (Photo, Link or even your FB Fan page)
+        likeView.setObjectId("http://www.facebook.com/buscaafacil");
+        // Set foreground color fpr Like count text
+        likeView.setForegroundColor(-256);
+        
         PersonalizarFuente();
 
         DatosPorDefecto();
         // cambiarImagen();
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    	// TODO Auto-generated method stub
+    	super.onActivityResult(requestCode, resultCode, data);
+        LikeView.handleOnActivityResult(this, requestCode, resultCode, data);
+        Log.i(TAG, "OnActivityResult...");
     }
 
     private void PersonalizarFuente(){
@@ -92,19 +113,21 @@ public class Principal extends Activity {
         });*/
     	
     	//CON ESTA OPCION LLAMO A LA VISTA PARA CAPITAL
-    	btnCapital = (Button) findViewById(R.id.btnCapital);
+    	/*btnCapital = (Button) findViewById(R.id.btnCapital);
     	btnCapital.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // Intent intent = new Intent(Principal.this, Categoria.class);
                 // startActivity(intent);
+            	
             	Context context = getApplicationContext();
             	CharSequence text = "Proximamente";
             	int duration = Toast.LENGTH_SHORT;
 
             	Toast toast = Toast.makeText(context, text, duration);
-            	toast.show();
+            	toast.show();      
             }
-        });
+        });*/
+  
     	
     	//CON ESTA OPCION LLAMO A LA VISTA PARA YERBA BUENA
     	btnYerbaBuena = (Button) findViewById(R.id.btnYerbaBuena);
