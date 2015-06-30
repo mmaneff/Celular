@@ -33,15 +33,18 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.datos2);
-		//setContentView(R.layout.datos);
+		
+		Bundle bundle = this.getIntent().getExtras();
+        int datos_activity = bundle.getInt("datos_activity");
+        idnegocio = bundle.getLong("ID");
+        
+        if(datos_activity == 1)
+        	setContentView(R.layout.datos);
+        else
+        	setContentView(R.layout.datos2);
 		
 		PersonalizarFuente();
-
-		// Recupero los datos de la pantalla negocio
-		Bundle bundle = this.getIntent().getExtras();
-
-		idnegocio = bundle.getLong("ID");
+			
 		// inicializarMapa();
 		inicializarComponentes();
 		Descripcion();

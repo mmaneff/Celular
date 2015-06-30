@@ -49,11 +49,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="Principal1" 
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar">
-        </activity>
+        </activity>        
         <activity android:name="Categoria" 
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar">

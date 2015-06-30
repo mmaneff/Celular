@@ -15,11 +15,13 @@ public class Comercio {
     private String detalle;
     private String latitud;
     private String longitud;
+    private int activity;
 	
     public Comercio(Long id, String razonSocial, String categoria,
-			String subcategoria, String domicilio, String telefono, String telefono2, String telefono3,
-			String correoElectronico, String sitioWeb, String detalle,
-			String latitud, String longitud) {
+			String subcategoria, String domicilio, String telefono, 
+			String telefono2, String telefono3, String correoElectronico, 
+			String sitioWeb, String detalle, String latitud, 
+			String longitud, int activity) {
 		super();
 		this.id = id;
 		this.razonSocial = razonSocial;
@@ -34,6 +36,7 @@ public class Comercio {
 		this.detalle = detalle;
 		this.latitud = latitud;
 		this.longitud = longitud;
+		this.activity = activity;
 	}
     
     public Comercio() {
@@ -143,6 +146,14 @@ public class Comercio {
 	
     public void setLongitud(String longitud) {
 		this.longitud = longitud;
+	}
+    
+    public int getActivity() {
+		return activity;
+	}
+	
+    public void setActivity(int activity) {
+		this.activity = activity;
 	}
 	
 }

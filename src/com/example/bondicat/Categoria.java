@@ -100,6 +100,7 @@ public class Categoria extends Activity {
      * Este metodo carga la lista. Además el fondo de cada elemento lo pone en base a un 
      * color recuperado en hexadecimal. 
      */
+    /*
     private void cargarListaConFondoDeColor() {
         lstOpciones = (ListView)findViewById(R.id.listView1);
         ArrayList<ItemLista2> itemslista = cargarItemsConColorDeFondo();
@@ -108,7 +109,7 @@ public class Categoria extends Activity {
 
         lstOpciones.setAdapter(adapter);
     }
-
+     */
     /**
      * 
      * @return
@@ -144,11 +145,12 @@ public class Categoria extends Activity {
         return items;
     }
     
+    /*
     private ArrayList<ItemLista2> cargarItemsConColorDeFondo() {
     	ArrayList<ItemLista2> items = new ArrayList<ItemLista2>();
   	
-    	items.add(new ItemLista2(1, "ALIMENTOS", getResources().getDrawable(R.drawable.iconoalimentos),"#2F5279"));
-		items.add(new ItemLista2(2, "AUTOMOTOR",getResources().getDrawable(R.drawable.iconoauto),"#8B4788"));
+    	items.add(new ItemLista2(1, "ALIMENTOS", getResources().getDrawable(R.drawable.iconoalimentos),"#2E7D32"));
+		items.add(new ItemLista2(2, "AUTOMOTOR",getResources().getDrawable(R.drawable.iconoauto),"#283593"));
 		items.add(new ItemLista2(3, "BANCOS Y TARJETAS", getResources().getDrawable(R.drawable.iconobanco),"#028228"));
 		items.add(new ItemLista2(4, "BELLEZA", getResources().getDrawable(R.drawable.iconobelleza),"#6B37C1"));
 		items.add(new ItemLista2(5, "BOUTIQUE", getResources().getDrawable(R.drawable.iconoboutique),"#EC4700"));
@@ -171,7 +173,7 @@ public class Categoria extends Activity {
 		
 		return items;
     }
-
+     */
     
     
     public void cargarbanners(){

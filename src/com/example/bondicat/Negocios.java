@@ -72,7 +72,8 @@ public class Negocios extends Activity implements LocationListener{
             public void onItemClick(AdapterView<?> a, View v, int position,long id) {
                 if(id > 0){
                     Bundle bundle = new Bundle();
-                    bundle.putLong("ID" , id );
+                    bundle.putLong("ID", id );
+                    bundle.putInt("datos_activity", 2);                    
                     Intent intent = new Intent(Negocios.this, Datos.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
