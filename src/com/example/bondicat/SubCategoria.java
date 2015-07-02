@@ -1,10 +1,18 @@
 package com.example.bondicat;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.example.publicidad.PublicidadCategoriaAdapter;
+import com.example.publicidad.PublicidadSubCategoriaAdapter;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -17,6 +25,7 @@ public class SubCategoria extends Activity{
     int idcategoria;
     String nombre;
     ListView lstOpciones;
+    int count = 0;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +58,10 @@ public class SubCategoria extends Activity{
                 //}
             }
         });
+        
+        
     }
+       
 
     private void CargarLista() {
         // TODO Auto-generated method stub

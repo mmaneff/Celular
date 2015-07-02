@@ -1,11 +1,18 @@
 package com.example.bondicat;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.example.publicidad.PublicidadCategoriaAdapter;
+import com.example.publicidad.PublicidadPrincipalAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -31,6 +38,9 @@ public class Categoria extends Activity {
 	//Variables locales, por eso se las declara como privada, no podrán ser accedidas desde otra clase
     private ListView lstOpciones;
     private EditText etBuscar;
+    static int count = 0;
+    //private Publicidad publicidadThread;
+    private ViewPager viewPager = null;
 
     private SQLiteDatabase database;
 
@@ -81,8 +91,69 @@ public class Categoria extends Activity {
     	        return handled;
     	    }
     	});
+        /*
+        PagerAdapter adapter = new PublicidadCategoriaAdapter(Categoria.this);
+        viewPager = (ViewPager) findViewById(R.id.viewPager2);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(0);
+        
+        mostrarPublicidad();*/
+        
     }
-
+  /*  
+    private void mostrarPublicidad() {
+    	publicidadThread = new Publicidad();
+    	publicidadThread.start();
+    }
+    
+    private class Publicidad extends Thread {
+        Timer timer;
+        private boolean running = false;
+        
+        @Override
+    	public void run() {
+    		running = true;
+    		while (running) {
+	    		try
+	            {
+	    			sleep(2000);
+	    			runOnUiThread(new Runnable() {
+	    				public void run() {
+	    					if(count <= 4) {
+	    	            		viewPager.setCurrentItem(count);
+	    	                    count++;
+	    	                }
+	    	                else {
+	    	                	count = 0;
+	    	                    viewPager.setCurrentItem(count);
+	    	                }
+	    				}
+	    			});
+	            }
+	            catch (InterruptedException e)
+	            {
+	               e.printStackTrace();
+	            }
+	            finally
+	            {
+	              System.out.println("finally");
+	            }
+        	}
+    	}
+        
+        public void close() {
+        	running = false;
+        }        
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	publicidadThread.close();
+    	publicidadThread = null;
+    }
+*/
     /**
      * Este metodo carga la lista. Además el fondo de cada elemento lo pone en base a cada imagen 
      * guardada en el archivo de recurso. 

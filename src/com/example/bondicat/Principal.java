@@ -1,7 +1,10 @@
 package com.example.bondicat;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import com.example.publicidad.PublicidadPrincipalAdapter;
 import com.facebook.Settings;
 import com.facebook.widget.LikeView;
 
@@ -12,6 +15,9 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -40,6 +46,9 @@ public class Principal extends Activity {
     ImageView ivTwitter;
     //EditText etBuscar;
     int contador;
+    static int count = 0;
+    private Publicidad publicidadThread;
+    private ViewPager viewPager = null;
 
     final String message = "Funcionalidad en construcción";
     private static final String TAG = "FBLike";
@@ -62,6 +71,66 @@ public class Principal extends Activity {
 
         DatosPorDefecto();
         // cambiarImagen();
+        
+        PagerAdapter adapter = new PublicidadPrincipalAdapter(Principal.this);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(0);
+        
+        mostrarPublicidad();
+    }
+    
+    private void mostrarPublicidad() {
+    	publicidadThread = new Publicidad();
+    	publicidadThread.start();
+    }
+    
+    private class Publicidad extends Thread {
+        Timer timer;
+        private boolean running = false;
+        
+        @Override
+    	public void run() {
+    		running = true;
+    		while (running) {
+	    		try
+	            {
+	    			sleep(2000);
+	    			runOnUiThread(new Runnable() {
+	    				public void run() {
+	    					if(count <= 4) {
+	    	            		viewPager.setCurrentItem(count);
+	    	                    count++;
+	    	                }
+	    	                else {
+	    	                	count = 0;
+	    	                    viewPager.setCurrentItem(count);
+	    	                }
+	    				}
+	    			});
+	            }
+	            catch (InterruptedException e)
+	            {
+	               e.printStackTrace();
+	            }
+	            finally
+	            {
+	              System.out.println("finally");
+	            }
+        	}
+    	}
+        
+        public void close() {
+        	running = false;
+        }        
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();    	
+    	publicidadThread.close();
+    	publicidadThread = null;
     }
     
     @Override
