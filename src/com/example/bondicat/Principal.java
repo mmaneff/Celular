@@ -47,7 +47,7 @@ public class Principal extends Activity {
     //EditText etBuscar;
     int contador;
     static int count = 0;
-    private Publicidad publicidadThread;
+    //private Publicidad publicidadThread;
     private ViewPager viewPager = null;
 
     final String message = "Funcionalidad en construcción";
@@ -69,17 +69,18 @@ public class Principal extends Activity {
         
         PersonalizarFuente();
 
-        DatosPorDefecto();
-        // cambiarImagen();
         
+        // cambiarImagen();
+        /*
         PagerAdapter adapter = new PublicidadPrincipalAdapter(Principal.this);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0);
         
         mostrarPublicidad();
+        */
     }
-    
+    /*
     private void mostrarPublicidad() {
     	publicidadThread = new Publicidad();
     	publicidadThread.start();
@@ -132,7 +133,7 @@ public class Principal extends Activity {
     	publicidadThread.close();
     	publicidadThread = null;
     }
-    
+    */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     	// TODO Auto-generated method stub
@@ -151,116 +152,29 @@ public class Principal extends Activity {
         tvTitle.setTypeface(breeExtraboldFont);
         tvFiendMe.setTypeface(breeRegularFont);
     }
-
-    private void DatosPorDefecto() {
-        // TODO Auto-generated method stub
-    	/*
-    	etBuscar = (EditText) findViewById(R.id.etFiend);
-    	etBuscar.setOnEditorActionListener(new OnEditorActionListener() {
-    	    @Override
-    	    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-    	        boolean handled = false;
-    	        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-    	        	Bundle bundle = new Bundle();
-                    bundle.putString("busqueda" , etBuscar.getText().toString());
-    	        	Intent intent = new Intent(Principal.this, Busqueda.class);
-    	        	intent.putExtras(bundle);
-                    startActivity(intent);
-    	            handled = true;
-    	        }
-    	        return handled;
-    	    }
-    	});*/
-    	
-    	/*
-        btnCategory=(Button) findViewById(R.id.btnCapital);
-        btnCategory.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(Principal.this, Categoria.class);
-                startActivity(intent);
-            }
-        });*/
-    	
-    	//CON ESTA OPCION LLAMO A LA VISTA PARA CAPITAL
-    	/*btnCapital = (Button) findViewById(R.id.btnCapital);
-    	btnCapital.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                // Intent intent = new Intent(Principal.this, Categoria.class);
-                // startActivity(intent);
-            	
-            	Context context = getApplicationContext();
-            	CharSequence text = "Proximamente";
-            	int duration = Toast.LENGTH_SHORT;
-
-            	Toast toast = Toast.makeText(context, text, duration);
-            	toast.show();      
-            }
-        });*/
-  
-    	
-    	//CON ESTA OPCION LLAMO A LA VISTA PARA YERBA BUENA
-    	btnYerbaBuena = (Button) findViewById(R.id.btnYerbaBuena);
-    	btnYerbaBuena.setOnClickListener(new OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(Principal.this, Categoria.class);
-                startActivity(intent);
-            }
-        });
-        
-        ivEmail = (ImageView) this.findViewById(R.id.ivMail);
-        ivEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == findViewById(R.id.ivMail)) {
-                    Intent i = new Intent(Intent.ACTION_SEND);
-                    i.setType("message/rfc822") ;
-                    i.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@guiabuscafacil.com"});
-                    startActivity(Intent.createChooser(i, "Seleccionar aplicación."));
-                }
-            }
-        });
-        ivFacebook = (ImageView) this.findViewById(R.id.ivFacebook);
-        ivFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == findViewById(R.id.ivFacebook)) {
-                    Uri uriUrl = Uri.parse("http://www.facebook.com/buscaafacil");
-                    Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-                    startActivity(launchBrowser);
-                }
-            }
-        });
-        ivTwitter = (ImageView) this.findViewById(R.id.ivTwitter);
-        ivTwitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == findViewById(R.id.ivTwitter)) {
-                    Uri uriUrl = Uri.parse("http://www.twitter.com/buscaafacil");
-                    Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-                    startActivity(launchBrowser);
-                }
-            }
-        });
+    
+    public void onCategoriaClick(View view) {
+    	Intent intent = new Intent(Principal.this, Categoria.class);
+        startActivity(intent);
     }
-
-    private void Imagen() {
-        // TODO Auto-generated method stub
-        contador++;
-        ImageView image = (ImageView) findViewById(R.id.ivPublicity);
-        if(contador==1){
-            image.setImageResource(R.drawable.publicidad);
-        }if(contador==2){
-            image.setImageResource(R.drawable.imagensubcategoria);
-        }
-        if(contador==3){
-            image.setImageResource(R.drawable.logo);
-            contador=0;
-        }
+    
+    public void onMailClick(View view) {
+    	Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822") ;
+        i.putExtra(Intent.EXTRA_EMAIL, new String[]{"info@guiabuscafacil.com"});
+        startActivity(Intent.createChooser(i, "Seleccionar aplicación."));
     }
-
-    /**
-     * Maneja los radio buttons
-     * @param view
-     */
+    
+    public void onFacebookClick(View view) {
+    	Uri uriUrl = Uri.parse("http://www.facebook.com/buscaafacil");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
+    }
+    
+    public void onTwitterClick(View view) {
+    	Uri uriUrl = Uri.parse("http://www.twitter.com/buscaafacil");
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
+    }
 
 }

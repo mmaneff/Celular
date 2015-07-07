@@ -28,7 +28,7 @@
             android:layout_marginLeft="20dp"
             android:text="@string/tvTitle"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_16" />
+            android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,7 +53,7 @@
                android:text="@string/tvRazonSocial1"
                android:textAppearance="?android:attr/textAppearanceLarge"
                android:textColor="@color/rojo"
-               android:textSize="@dimen/font_size_42"
+               android:textSize="@dimen/font_titulo_detalle"
                android:textStyle="bold" />
 		
 	</LinearLayout>
@@ -75,7 +75,7 @@
             android:textColor="@color/blanco"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="@dimen/font_size_38" />
+            android:textSize="@dimen/font_titulo_detalle" />
         
 		<TextView
 		    android:id="@+id/txtDetalle"
@@ -87,7 +87,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_28" />
+            android:textSize="@dimen/font_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtDireccion"
@@ -99,7 +99,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_38" />
+            android:textSize="@dimen/font_direccion_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtTelefono"
@@ -111,7 +111,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_38" />
+            android:textSize="@dimen/font_telefono_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtLocalidad"
@@ -122,7 +122,7 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium"
 		    android:textColor="@color/blanco"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_28" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<TextView
 		    android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_38" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<TextView
 		    android:id="@+id/txtHorario"
@@ -145,7 +145,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_28" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<ImageView
             android:id="@+id/imglinea"
@@ -196,7 +196,7 @@
              android:background="@color/rojo_pastel"
              android:text="@string/btnRegresar"
              android:textColor="@color/white"
-             android:textSize="@dimen/font_size_24"
+             android:textSize="@dimen/font_boton_detalle"
              android:textStyle="bold" />
 
          <Button
@@ -208,7 +208,7 @@
              android:background="@color/rojo_pastel"
              android:text="@string/btnLlamar"             
              android:textColor="@color/white"
-             android:textSize="@dimen/font_size_24"
+             android:textSize="@dimen/font_boton_detalle"
              android:textStyle="bold" />
          
          <Button             
@@ -220,7 +220,7 @@
              android:background="@color/rojo_pastel"
              android:text="@string/btnMapa"
              android:textColor="@color/white"
-             android:textSize="@dimen/font_size_24"
+             android:textSize="@dimen/font_boton_detalle"
              android:textStyle="bold" />
 
      </LinearLayout>

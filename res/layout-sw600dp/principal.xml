@@ -37,7 +37,7 @@
 	        android:text="@string/tvTitle"
 	        android:textStyle="bold"
 	        android:textColor="@color/white"
-	        android:textSize="@dimen/font_title_size_82" />
+	        android:textSize="@dimen/font_titulo_principal" />
 
 	</LinearLayout>
 	    
@@ -62,9 +62,10 @@
             android:layout_marginLeft="35dp"
 			android:background="@drawable/boton_redondo"            
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_42"
+            android:textSize="@dimen/font_boton_principal"
             android:textStyle="bold"
-            android:text="Yerba Buena" />
+            android:text="Yerba Buena"
+            android:onClick="onCategoriaClick" />
         
     </LinearLayout>
 
@@ -79,6 +80,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/publicidad"
+            android:background="@drawable/pb_1"
             android:scaleType="fitXY" />
     </LinearLayout>
 
@@ -99,28 +101,31 @@
             android:gravity="fill_vertical|center_horizontal"
             android:text="@string/tvFiendMe"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_32" />
+            android:textSize="@dimen/font_pie_principal" />
 
         <ImageView
             android:id="@+id/ivMail"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/menumail" />
+            android:src="@drawable/menumail"
+            android:onClick="onMailClick" />
 
         <ImageView
             android:id="@+id/ivFacebook"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/menufacebook" />
+            android:src="@drawable/menufacebook"
+            android:onClick="onFacebookClick" />
 
         <ImageView
             android:id="@+id/ivTwitter"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/menupajarito" />
+            android:src="@drawable/menupajarito"
+            android:onClick="onTwitterClick" />
     </LinearLayout>
 
 </LinearLayout>

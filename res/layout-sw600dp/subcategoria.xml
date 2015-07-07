@@ -26,9 +26,9 @@
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="@string/tvTitle"
+            android:text="@string/tvSubcategoria"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_14" />
+            android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +76,7 @@
 	                android:layout_margin="5dp"
 	                android:gravity="center"
 	                android:text="EVENTOS"
-	                android:textSize="@dimen/font_size_32"
+	                android:textSize="@dimen/font_titulo_subcategoria"
 	                android:textStyle="bold"
 	                android:textAppearance="?android:attr/textAppearanceLarge"
 	                android:textColor="@color/white" />

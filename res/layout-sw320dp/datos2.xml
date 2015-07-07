@@ -28,7 +28,7 @@
 		    android:layout_marginLeft="20dp"
 		    android:text="@string/tvTitle"
 		    android:textColor="@color/white"
-		    android:textSize="@dimen/font_size_16" />
+		    android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +76,7 @@
             android:textColor="@color/blanco"
             android:textStyle="bold"
             android:gravity="left"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_titulo_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtDireccion"
@@ -88,7 +88,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="left"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_direccion_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtTelefono"
@@ -100,7 +100,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="left"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_telefono_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtLocalidad"
@@ -111,7 +111,7 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium"
 		    android:textColor="@color/blanco"
 		    android:gravity="left"
-            android:textSize="@dimen/font_size_20" />		
+            android:textSize="@dimen/font_detalle_2" />		
 		
     </LinearLayout>
         

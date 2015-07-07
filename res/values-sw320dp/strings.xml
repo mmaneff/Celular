@@ -13,6 +13,7 @@
 	<string name="tvCompany">Empresa</string>
 	<string name="tvTituloNegocios">NEGOCIOS</string>
 	<string name="tvTituloCategorias">CATEGORIAS</string>
+	<string name="tvSubcategoria">SUBCATEGORIA</string>
 	<string name="tvTextName">Texto</string>
 	<string name="btnRegresar">REGRESAR</string>
 	<string name="btnLlamar">LLAMAR</string>

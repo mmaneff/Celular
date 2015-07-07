@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"        
-        android:textSize="@dimen/font_title_size_36"
+        android:textSize="@dimen/font_titulo_principal"
         android:textColor="@color/white"
         android:text="@string/tvTitle" />
 
@@ -53,7 +53,7 @@
             android:textStyle="bold"
             android:text="@string/btnCategory"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_18" />
+            android:textSize="@dimen/font_boton_principal" />
         
     </LinearLayout>
         
@@ -70,7 +70,7 @@
             android:gravity="fill_vertical|center_horizontal"
             android:text="@string/tvFiendMe"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_pie_principal" />
         
         <ImageView
             android:id="@+id/ivMail"

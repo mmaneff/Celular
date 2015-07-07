@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main Activity -->
-    <dimen name="font_titulo_principal">24sp</dimen>
-    <dimen name="font_boton_principal">36sp</dimen>
-    <dimen name="font_pie_principal">36sp</dimen>
+    <dimen name="font_titulo_principal">76sp</dimen>
+    <dimen name="font_boton_principal">32sp</dimen>
+    <dimen name="font_pie_principal">28sp</dimen>
     
     <!-- Comun a todas las Actividades -->
-    <dimen name="font_cabecera">36sp</dimen>
+    <dimen name="font_cabecera">20sp</dimen>
     
     <!-- Categorias Activity -->
-    <dimen name="font_buscar">12sp</dimen>
-	<dimen name="font_categoria">12sp</dimen>
+    <dimen name="font_buscar">24sp</dimen>
+	<dimen name="font_categoria">20sp</dimen>
     
     <!-- SubCategorias Activity -->
     <dimen name="font_titulo_subcategoria">14sp</dimen>

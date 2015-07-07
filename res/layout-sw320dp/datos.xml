@@ -28,7 +28,7 @@
 		    android:layout_marginLeft="20dp"
 		    android:text="@string/tvTitle"
 		    android:textColor="@color/white"
-		    android:textSize="@dimen/font_size_16" />
+		    android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +73,7 @@
             android:textColor="@color/blanco"
             android:textStyle="bold"
             android:gravity="center"
-            android:textSize="@dimen/font_size_24" />
+            android:textSize="@dimen/font_titulo_detalle" />
         
 		<TextView
 		    android:id="@+id/txtDetalle"
@@ -85,7 +85,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtDireccion"
@@ -97,7 +97,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_22" />
+            android:textSize="@dimen/font_direccion_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtTelefono"
@@ -109,7 +109,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_22" />
+            android:textSize="@dimen/font_telefono_detalle" />
 		
 		<TextView
 		    android:id="@+id/txtLocalidad"
@@ -120,7 +120,7 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium"
 		    android:textColor="@color/blanco"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<TextView
 		    android:layout_width="fill_parent"
@@ -131,7 +131,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_22" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<TextView
 		    android:id="@+id/txtHorario"
@@ -142,7 +142,7 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium" 
 		    android:textColor="@color/blanco"
 		    android:gravity="center"
-            android:textSize="@dimen/font_size_20" />
+            android:textSize="@dimen/font_detalle_2" />
 		
 		<ImageView
             android:id="@+id/imglinea"

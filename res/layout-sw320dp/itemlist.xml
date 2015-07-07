@@ -21,6 +21,7 @@
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:text="@string/tvTextName"
+        android:textSize="@dimen/font_categoria"
         android:textColor="@color/white" />
 
 </LinearLayout>

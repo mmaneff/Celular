@@ -28,7 +28,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 	        	android:layout_marginLeft="15dp"	
-		        android:textSize="@dimen/font_size_20"
+		        android:textSize="@dimen/font_titulo_negocio"
 		        android:textStyle="bold"
 		        android:text="@string/tvCompany"
 		        android:textAppearance="?android:attr/textAppearanceMedium" 
@@ -40,7 +40,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 	        	android:layout_marginLeft="15dp"	
-		        android:textSize="@dimen/font_size_16"
+		        android:textSize="@dimen/font_direccion_negocio"
 		        android:text="@string/tvAddress"
 		        android:textAppearance="?android:attr/textAppearanceSmall" 
 		        android:textColor="@color/gris_oscuro"/>
@@ -51,7 +51,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_marginTop="10dp"
 	        	android:layout_marginLeft="15dp"	
-		        android:textSize="@dimen/font_size_16"
+		        android:textSize="@dimen/font_telefono_negocio"
 		        android:text="@string/tvCercania"
 		        android:textAppearance="?android:attr/textAppearanceSmall" 
 		        android:textColor="@color/gris_oscuro"/>
