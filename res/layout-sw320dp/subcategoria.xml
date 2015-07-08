@@ -105,6 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/imanodisp2"
+                android:background="@drawable/pb_fibertel"
                 android:scaleType="fitXY" />
         </LinearLayout>
     </LinearLayout>

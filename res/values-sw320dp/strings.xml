@@ -19,4 +19,5 @@
 	<string name="btnLlamar">LLAMAR</string>
 	<string name="btnFavorito">FAVORITO</string>
 	<string name="btnMapa">MAPA</string>
+	<string name="tvTituloNegocio">NEGOCIO</string>
 </resources>

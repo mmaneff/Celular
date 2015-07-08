@@ -105,7 +105,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==0){
 //            rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaalimentossubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#2F5279"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.green_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoalimentos));
             items.add(new itemsubcate(1, "CARNICERIA",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -124,7 +124,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==1){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaautomotorsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#8B4788"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.indigo_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.orange_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoauto));
             items.add(new itemsubcate(1, "BATERIAS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -144,7 +144,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==2){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listabancosytarjetassubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#028228"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.pink_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconobanco));
             items.add(new itemsubcate(1, "PRESTAMOS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -156,7 +156,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==3){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listabellezasubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#6B37C1"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.orange_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.green_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconobelleza));
             items.add(new itemsubcate(1, "CAMA SOLAR",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -174,7 +174,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==4){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaboutiquesubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#EC4700"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.lime_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.blue_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoboutique));
             items.add(new itemsubcate(1, "CASA DE DEPORTES",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -189,7 +189,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==5){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaconstruccionsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.lightBlue_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.deepPurple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoservicios));
             items.add(new itemsubcate(1, "METROPOLITANA",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -201,7 +201,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==6){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaconstruccionsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.deepPurple_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.purple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoconstruccion));
             items.add(new itemsubcate(1, "AIRE ACONDICIONADO",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -224,7 +224,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==7){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listadecoracionyhogarsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#AA413E"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.cyan_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconohogar));
             items.add(new itemsubcate(1, "AROMATIZANTES",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -243,7 +243,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==8){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaeducacionsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#956500"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.lightGreen_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.orange_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconotiempoyrecreacion));
             items.add(new itemsubcate(1, "ARTES MARCIALES",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -264,7 +264,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==9){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaeducacionsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#956500"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.amber_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoeducacion));
             items.add(new itemsubcate(1, "COLEGIO",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -282,7 +282,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==10){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaemergenciasubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#006FA4"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.teal_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.green_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoemergencia));
             items.add(new itemsubcate(1, "BOMBEROS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -299,7 +299,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==11){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaeventosyfiestassubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#CC00CC"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.blue_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconotiempoyrecreacion));
             items.add(new itemsubcate(1, "BALLET",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -324,7 +324,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==12){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaeventosyfiestassubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#CC00CC"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.purple_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.deepPurple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoeventosyfiestas));
             items.add(new itemsubcate(1, "ALQ. DE BARRAS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -346,7 +346,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==13){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listagastronomiasubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#00AE2C"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.red_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.purple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconogastronomia));
             items.add(new itemsubcate(1, "CAFETERIA",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -368,7 +368,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==14){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaimprentasubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#9B2F1C"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.lime_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoimprenta));
             items.add(new itemsubcate(1, "FOTOCOPIAS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -379,7 +379,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==15){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaprofesionalessubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#76329A"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.orange_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.orange_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconobanco));
             items.add(new itemsubcate(1, "PAGO FACIL",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -390,7 +390,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==16){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaprofesionalessubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#76329A"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.brown_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoprofesionales));
             items.add(new itemsubcate(1, "ABOGADO",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -404,7 +404,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==17){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listasaludsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#37618E"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.blueGrey_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.green_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconosalud));
             items.add(new itemsubcate(1, "CENTRO MEDICO",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -424,7 +424,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==18){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaseguridadsubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#864483"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.grey_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.blue_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoseguridad));
             items.add(new itemsubcate(1, "ALARMAS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -437,7 +437,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==19){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaserviciosnegocios));
         	//rl.setBackgroundColor(Color.parseColor("#A4A400"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.deepPurple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoservicios));
             items.add(new itemsubcate(1, "AIRE ACONDICIONADO",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -458,7 +458,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==20){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaserviciospublicossubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#820228"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.cyan_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.purple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoserviciospublicos));
             items.add(new itemsubcate(1, "AEROPARQUE",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -485,7 +485,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==21){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listashoppingygaleriassubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#029930"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.green_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoshopping));
             items.add(new itemsubcate(1, "LOS TRONCOS",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -499,7 +499,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==22){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listatransportesubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#660033"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.pink_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.orange_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconotransportes));
             items.add(new itemsubcate(1, "TAXI YERBA BUENA",getResources().getDrawable(R.drawable.imagensubcategoria)));
@@ -510,7 +510,7 @@ public class SubCategoria extends Activity{
         if(idcategoria==23){
             //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaturismosubcategoria));
         	//rl.setBackgroundColor(Color.parseColor("#333333"));
-        	rl.setBackgroundColor(getResources().getColor(R.color.orange_500));
+        	rl.setBackgroundColor(getResources().getColor(R.color.yellow_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoturismo));
             items.add(new itemsubcate(1, "HOTEL",getResources().getDrawable(R.drawable.imagensubcategoria)));

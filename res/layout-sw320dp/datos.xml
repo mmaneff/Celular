@@ -4,7 +4,7 @@
     tools:ignore="contentDescription"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rojo"
+    android:background="@color/orange_600"
     android:orientation="vertical" >
     
 	<LinearLayout 
@@ -26,7 +26,7 @@
 		    android:layout_height="40dp"
 		    android:gravity="center_vertical"
 		    android:layout_marginLeft="20dp"
-		    android:text="@string/tvTitle"
+		    android:text="@string/tvTituloNegocio"
 		    android:textColor="@color/white"
 		    android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
@@ -189,7 +189,7 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/orange_900"
              android:text="@string/btnRegresar"
              android:textColor="@color/white"
              android:textStyle="bold" />
@@ -200,7 +200,7 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/orange_900"
              android:text="@string/btnLlamar"             
              android:textColor="@color/white"
              android:textStyle="bold" />
@@ -211,7 +211,7 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/orange_900"
              android:text="@string/btnMapa"
              android:textColor="@color/white"
              android:textStyle="bold" />

@@ -4,7 +4,7 @@
     tools:ignore="contentDescription"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/rojo"
+    android:background="@color/purple_700"
     android:orientation="vertical" >
     
 	<LinearLayout 
@@ -26,7 +26,7 @@
 		    android:layout_height="40dp"
 		    android:gravity="center_vertical"
 		    android:layout_marginLeft="20dp"
-		    android:text="@string/tvTitle"
+		    android:text="@string/tvTituloNegocio"
 		    android:textColor="@color/white"
 		    android:textSize="@dimen/font_cabecera" />
     </LinearLayout>
@@ -52,7 +52,8 @@
                android:text="@string/tvRazonSocial1"
                android:textAppearance="?android:attr/textAppearanceLarge"
                android:textColor="@color/blanco"
-               android:textStyle="bold" />
+               android:textStyle="bold"
+               android:textSize="@dimen/font_titulo_vista_2" />
 		
 	</LinearLayout>
 
@@ -76,7 +77,7 @@
             android:textColor="@color/blanco"
             android:textStyle="bold"
             android:gravity="left"
-            android:textSize="@dimen/font_titulo_detalle" />
+            android:textSize="@dimen/font_seg_titulo_vista_2" />
 		
 		<TextView
 		    android:id="@+id/txtDireccion"
@@ -88,7 +89,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="left"
-            android:textSize="@dimen/font_direccion_detalle" />
+            android:textSize="@dimen/font_direccion_vista_2" />
 		
 		<TextView
 		    android:id="@+id/txtTelefono"
@@ -100,7 +101,7 @@
 		    android:textColor="@color/blanco"
 		    android:textStyle="bold"
 		    android:gravity="left"
-            android:textSize="@dimen/font_telefono_detalle" />
+            android:textSize="@dimen/font_telefono_vista_2" />
 		
 		<TextView
 		    android:id="@+id/txtLocalidad"
@@ -111,7 +112,7 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium"
 		    android:textColor="@color/blanco"
 		    android:gravity="left"
-            android:textSize="@dimen/font_detalle_2" />		
+            android:textSize="@dimen/font_localidad_vista_2" />		
 		
     </LinearLayout>
         
@@ -126,10 +127,11 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/purple_900"
              android:text="@string/btnRegresar"
              android:textColor="@color/white"
-             android:textStyle="bold" />
+             android:textStyle="bold"
+             android:textSize="@dimen/font_boton_vista_2" />
 
          <Button
              android:id="@+id/btnLlamar"
@@ -137,10 +139,11 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/purple_900"
              android:text="@string/btnLlamar"             
              android:textColor="@color/white"
-             android:textStyle="bold" />
+             android:textStyle="bold"
+             android:textSize="@dimen/font_boton_vista_2" />
          
          <Button             
              android:id="@+id/btnMapa"
@@ -148,10 +151,11 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:layout_margin="5dp"
-             android:background="@color/rojo_pastel"
+             android:background="@color/purple_900"
              android:text="@string/btnMapa"
              android:textColor="@color/white"
-             android:textStyle="bold" />
+             android:textStyle="bold"
+             android:textSize="@dimen/font_boton_vista_2" />
 
      </LinearLayout>
      

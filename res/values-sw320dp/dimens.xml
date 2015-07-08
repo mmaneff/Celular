@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main Activity -->
-    <dimen name="font_titulo_principal">44sp</dimen>
+    <dimen name="font_titulo_principal">40sp</dimen>
     <dimen name="font_boton_principal">14sp</dimen>
     <dimen name="font_pie_principal">14sp</dimen>
     
@@ -22,11 +22,20 @@
     <dimen name="font_direccion_negocio">20sp</dimen>
     <dimen name="font_telefono_negocio">22sp</dimen>
     
-    <!-- Datos Activity -->
-  	<dimen name="font_titulo_detalle">24sp</dimen>
-  	<dimen name="font_detalle">28sp</dimen>
-  	<dimen name="font_detalle_2">28sp</dimen>
-  	<dimen name="font_direccion_detalle">28sp</dimen>
-  	<dimen name="font_telefono_detalle">32sp</dimen>  	
-  	<dimen name="font_boton_detalle">42sp</dimen>
+    <!-- Datos Activity 1 -->
+  	<dimen name="font_titulo_detalle">22sp</dimen>
+  	<dimen name="font_detalle">16sp</dimen>
+  	<dimen name="font_detalle_2">16sp</dimen>
+  	<dimen name="font_direccion_detalle">16sp</dimen>
+  	<dimen name="font_telefono_detalle">16sp</dimen>  	
+  	<dimen name="font_boton_detalle">14sp</dimen>
+  	
+  	<!-- Datos Activity 2 -->
+  	<dimen name="font_titulo_vista_2">22sp</dimen>
+  	<dimen name="font_seg_titulo_vista_2">22sp</dimen>
+  	<dimen name="font_direccion_vista_2">18sp</dimen>
+  	<dimen name="font_telefono_vista_2">18sp</dimen>
+  	<dimen name="font_localidad_vista_2">16sp</dimen>
+  	<dimen name="font_boton_vista_2">12sp</dimen>
+  	
 </resources>

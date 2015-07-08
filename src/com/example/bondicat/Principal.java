@@ -153,7 +153,11 @@ public class Principal extends Activity {
         tvFiendMe.setTypeface(breeRegularFont);
     }
     
-    public void onCategoriaClick(View view) {
+    public void onCapitalClick(View view) {
+    	Toast.makeText(getApplicationContext(), "Funcionalidad en Construcción", Toast.LENGTH_SHORT).show();
+    }
+    
+    public void onYerbaBuenaClick(View view) {
     	Intent intent = new Intent(Principal.this, Categoria.class);
         startActivity(intent);
     }
