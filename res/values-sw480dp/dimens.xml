@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Main Activity -->
-    <dimen name="font_titulo_principal">58sp</dimen>
-    <dimen name="font_boton_principal">30sp</dimen>
+    <dimen name="font_titulo_principal">54sp</dimen>
+    <dimen name="font_boton_principal">26sp</dimen>
     <dimen name="font_pie_principal">20sp</dimen>
     
     <!-- Comun a todas las Actividades -->
@@ -13,20 +13,28 @@
 	<dimen name="font_categoria">16sp</dimen>
     
     <!-- SubCategorias Activity -->
-    <dimen name="font_titulo_subcategoria">14sp</dimen>
+    <dimen name="font_titulo_subcategoria">20sp</dimen>
     <dimen name="font_subcategoria">14sp</dimen>
     
     <!-- Negocios Activity -->    
-    <dimen name="font_negocio">16sp</dimen>
-    <dimen name="font_titulo_negocio">18sp</dimen>
-    <dimen name="font_direccion_negocio">20sp</dimen>
-    <dimen name="font_telefono_negocio">22sp</dimen>
+    <dimen name="font_negocio">22sp</dimen>
+    <dimen name="font_titulo_negocio">16sp</dimen>
+    <dimen name="font_direccion_negocio">14sp</dimen>
+    <dimen name="font_telefono_negocio">14sp</dimen>
     
-    <!-- Datos Activity -->
-  	<dimen name="font_titulo_detalle">24sp</dimen>
-  	<dimen name="font_detalle">28sp</dimen>
-  	<dimen name="font_detalle_2">28sp</dimen>
-  	<dimen name="font_direccion_detalle">28sp</dimen>
-  	<dimen name="font_telefono_detalle">32sp</dimen>  	
-  	<dimen name="font_boton_detalle">42sp</dimen>
+    <!-- Datos Activity 1 -->
+  	<dimen name="font_titulo_detalle">32sp</dimen>
+  	<dimen name="font_detalle">24sp</dimen>
+  	<dimen name="font_detalle_2">16sp</dimen>
+  	<dimen name="font_direccion_detalle">18sp</dimen>
+  	<dimen name="font_telefono_detalle">18sp</dimen>  	
+  	<dimen name="font_boton_detalle">18sp</dimen>
+  	
+  	<!-- Datos Activity 2 -->
+  	<dimen name="font_titulo_vista_2">30sp</dimen>
+  	<dimen name="font_seg_titulo_vista_2">28sp</dimen>
+  	<dimen name="font_direccion_vista_2">26sp</dimen>
+  	<dimen name="font_telefono_vista_2">26sp</dimen>
+  	<dimen name="font_localidad_vista_2">24sp</dimen>
+  	<dimen name="font_boton_vista_2">18sp</dimen>
 </resources>

@@ -1,18 +1,10 @@
 package com.example.bondicat;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.example.publicidad.PublicidadCategoriaAdapter;
-import com.example.publicidad.PublicidadSubCategoriaAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -22,89 +14,76 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
 public class SubCategoria extends Activity{
-    int idcategoria;
-    String nombre;
-    ListView lstOpciones;
-    int count = 0;
+	
+    private int idcategoria;
+    private String nombre;
+    private ListView lstOpciones;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subcategoria);
 
-//        this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.subcategoria, null);
-//
-//        this.setContentView(root);
-
         //Recupero los datos de la pantalla categorias
         Bundle bundle = this.getIntent().getExtras();
-        idcategoria=bundle.getInt("ID");
+        idcategoria = bundle.getInt("ID");
+        
+        //Cargo la lista de subcategorias
         CargarLista();
 
+        //Maneja el evento onClick de un elemento seleccionado en el listView
         lstOpciones.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,long id) {
-                //lblpulsado.setText("Has pulsado: "+datos[position]);
-                //if(position==0){
-                nombre=((itemsubcate)a.getItemAtPosition(position)).getNombre();
-                System.out.println("nombre000=" + nombre);
-                Bundle bundle = new Bundle();
-                bundle.putInt("ID" , position );
-                bundle.putInt("categoria",idcategoria);
-                bundle.putString("nombre",nombre );
-                bundle.putString("subcategoria",nombre );
+                nombre = ((itemsubcate)a.getItemAtPosition(position)).getNombre();
+                
                 Intent intent = new Intent(SubCategoria.this, Negocios.class);
-                intent.putExtras(bundle);
+                intent.putExtras(crearBundle(position));
                 startActivity(intent);
-                //}
             }
         });
+    }       
+    
+    /**
+     * 
+     * @param position
+     * @return
+     */
+    private Bundle crearBundle(int position) {
+    	Bundle bundle = new Bundle();
+        bundle.putInt("ID" , position);
+        bundle.putInt("categoria", idcategoria);
+        bundle.putString("nombre", nombre);
+        bundle.putString("subcategoria", nombre);
         
-        
+        return bundle;
     }
-       
-
+    
+    /**
+     * 
+     */
     private void CargarLista() {
-        // TODO Auto-generated method stub
         lstOpciones = (ListView)findViewById(R.id.listView1);
-
+        
+        //Obtengo la lista de items en base a la categoria seleccionada
         ArrayList<itemsubcate> itemslista = obtenerItems();
 
-        ItemListaAdapterSub adapter = new ItemListaAdapterSub(this, itemslista);
-
-        //final String[] datos =  new String[]{"AGENCIA DE AUTO","ACCESORIOS AUTOMOTOR","AUDIO CAR","BATERIAS"};
-        //final String[] datos1 =  new String[]{"ABERTURAS DE ALUMINIOS","ANTI HUMEDAD/HUMEDAD CIMIENTOS","YESERO","AMOBLAMIENTO/ CARPINTERIA"};
-        //final String[] datos2 =  new String[]{"DISE�O Y MANTENIMIENTO","JARDINERO","PODA DE ARBOLES","RIEGO"};
-        //final String[] datos3 =  new String[]{"LAVANDERIA Y TINTORERIA","LIMPIEZA DE ALFOMBRAS","LIMPIEZA Y MANTENIMIENTO EDILICIO","ALTA COSTURA"};
-
-        //ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, datos);
-        //System.out.println(idcategoria);
-        //if(idcategoria==0){
-        //adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, datos);
-        //}
-        //if(idcategoria==1){
-        //   adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, datos1);
-        //	}
-        //if(idcategoria==2){
-        //   adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, datos2);
-        //	}
-        //if(idcategoria==3){
-        //  adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, datos3);
-        //	}
+        //Cargo el listView
+        ItemListaAdapterSub adapter = new ItemListaAdapterSub(this, itemslista);        
         lstOpciones = (ListView)findViewById(R.id.listView1);
-
         lstOpciones.setAdapter(adapter);
-
     }
+    
+    /**
+     * Retorno un arreglo de subCategorias en base a la categoria seleccionada
+     * @return
+     */
     private ArrayList<itemsubcate> obtenerItems() {
 
         ArrayList<itemsubcate> items = new ArrayList<itemsubcate>();
-        //RelativeLayout rl=(RelativeLayout)findViewById(R.id.relativeLayout2);
         LinearLayout rl=(LinearLayout)findViewById(R.id.relativeLayout2);
         ImageView imagen=(ImageView)findViewById(R.id.imageView2);
 
         if(idcategoria==0){
-//            rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaalimentossubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#2F5279"));
         	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoalimentos));
@@ -122,8 +101,6 @@ public class SubCategoria extends Activity{
 //		    banner.setImageDrawable(getResources().getDrawable(R.drawable.banner2));
         }
         if(idcategoria==1){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaautomotorsubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#8B4788"));
         	rl.setBackgroundColor(getResources().getColor(R.color.orange_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoauto));
@@ -142,8 +119,6 @@ public class SubCategoria extends Activity{
 //			    banner.setImageDrawable(getResources().getDrawable(R.drawable.banner3));
         }
         if(idcategoria==2){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listabancosytarjetassubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#028228"));
         	rl.setBackgroundColor(getResources().getColor(R.color.yellow_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconobanco));
@@ -151,11 +126,8 @@ public class SubCategoria extends Activity{
             items.add(new itemsubcate(2, "BANCOS",getResources().getDrawable(R.drawable.imagensubcategoria)));
             TextView texto = (TextView)findViewById(R.id.textView2);
             texto.setText("BANCO/TARJETAS");
-
         }
         if(idcategoria==3){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listabellezasubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#6B37C1"));
         	rl.setBackgroundColor(getResources().getColor(R.color.green_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconobelleza));
@@ -172,8 +144,6 @@ public class SubCategoria extends Activity{
 
         }
         if(idcategoria==4){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaboutiquesubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#EC4700"));
         	rl.setBackgroundColor(getResources().getColor(R.color.blue_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoboutique));
@@ -187,8 +157,6 @@ public class SubCategoria extends Activity{
 
         }
         if(idcategoria==5){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaconstruccionsubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
         	rl.setBackgroundColor(getResources().getColor(R.color.deepPurple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoservicios));
@@ -199,8 +167,6 @@ public class SubCategoria extends Activity{
 
         }
         if(idcategoria==6){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listaconstruccionsubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
         	rl.setBackgroundColor(getResources().getColor(R.color.purple_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconoconstruccion));
@@ -222,8 +188,6 @@ public class SubCategoria extends Activity{
 
         }
         if(idcategoria==7){
-            //rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.listadecoracionyhogarsubcategoria));
-        	//rl.setBackgroundColor(Color.parseColor("#AA413E"));
         	rl.setBackgroundColor(getResources().getColor(R.color.red_800));
         	
             imagen.setImageDrawable(getResources().getDrawable(R.drawable.iconohogar));

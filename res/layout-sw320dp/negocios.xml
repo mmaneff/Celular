@@ -53,7 +53,7 @@
 	            android:padding="5dp"
 	            android:gravity="center"
 	            android:text="EVENTOS"
-	            android:textSize="@dimen/font_titulo_detalle"
+	            android:textSize="@dimen/font_negocio"
 	            android:textStyle="bold"
 	            android:textAppearance="?android:attr/textAppearanceLarge"
 	            android:textColor="@color/white" />

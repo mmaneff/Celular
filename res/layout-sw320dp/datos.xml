@@ -39,15 +39,15 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="fill_parent"
             android:src="@drawable/elpostino2"
             android:scaleType="fitXY" />
         
         <TextView
                android:id="@+id/txtRazonSocial"
                android:layout_width="fill_parent"
-               android:layout_height="100dp"
+               android:layout_height="90dp"
                android:gravity="center"               
                android:text="@string/tvRazonSocial1"
                android:textAppearance="?android:attr/textAppearanceLarge"

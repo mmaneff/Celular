@@ -45,13 +45,13 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:layout_weight="1.2"        
+        android:layout_weight="1.3"        
         android:orientation="horizontal" >
 
         <Button
             android:id="@+id/btnCapital"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/boton_redondo"            
             android:textColor="@color/white"
@@ -62,8 +62,8 @@
         
         <Button
             android:id="@+id/btnYerbaBuena"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/boton_redondo"            
             android:textColor="@color/white"
@@ -93,8 +93,8 @@
         android:layout_weight="1.3"
         android:gravity="center" >
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
+        <ImageView
+            android:id="@+id/imgPublicidad"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/publicidad"

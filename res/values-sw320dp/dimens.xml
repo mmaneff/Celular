@@ -14,28 +14,28 @@
     
     <!-- SubCategorias Activity -->
     <dimen name="font_titulo_subcategoria">14sp</dimen>
-    <dimen name="font_subcategoria">14sp</dimen>
+    <dimen name="font_subcategoria">16sp</dimen>
     
     <!-- Negocios Activity -->    
-    <dimen name="font_negocio">16sp</dimen>
-    <dimen name="font_titulo_negocio">18sp</dimen>
-    <dimen name="font_direccion_negocio">20sp</dimen>
-    <dimen name="font_telefono_negocio">22sp</dimen>
+    <dimen name="font_negocio">18sp</dimen>
+    <dimen name="font_titulo_negocio">16sp</dimen>
+    <dimen name="font_direccion_negocio">14sp</dimen>
+    <dimen name="font_telefono_negocio">14sp</dimen>
     
     <!-- Datos Activity 1 -->
   	<dimen name="font_titulo_detalle">22sp</dimen>
-  	<dimen name="font_detalle">16sp</dimen>
+  	<dimen name="font_detalle">12sp</dimen>
   	<dimen name="font_detalle_2">16sp</dimen>
   	<dimen name="font_direccion_detalle">16sp</dimen>
   	<dimen name="font_telefono_detalle">16sp</dimen>  	
   	<dimen name="font_boton_detalle">14sp</dimen>
   	
   	<!-- Datos Activity 2 -->
-  	<dimen name="font_titulo_vista_2">22sp</dimen>
+  	<dimen name="font_titulo_vista_2">24sp</dimen>
   	<dimen name="font_seg_titulo_vista_2">22sp</dimen>
   	<dimen name="font_direccion_vista_2">18sp</dimen>
   	<dimen name="font_telefono_vista_2">18sp</dimen>
   	<dimen name="font_localidad_vista_2">16sp</dimen>
-  	<dimen name="font_boton_vista_2">12sp</dimen>
+  	<dimen name="font_boton_vista_2">14sp</dimen>
   	
 </resources>

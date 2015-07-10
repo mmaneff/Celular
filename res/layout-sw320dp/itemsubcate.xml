@@ -10,8 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/tvTextName"
-        android:textColor="@color/white"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/imageView1"

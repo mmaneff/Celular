@@ -10,7 +10,7 @@
 	<LinearLayout 
 	    android:id="@+id/relativeLayout1" 
 	    android:layout_width="match_parent" 
-	    android:layout_height="45dp" 
+	    android:layout_height="70dp" 
 	    android:background="@drawable/fondomejorado" 
 	    android:orientation="horizontal">
 	        
@@ -29,6 +29,7 @@
 	        android:layout_marginLeft="20dp" 
 	        android:text="@string/tvTituloCategorias" 
 	        android:textColor="@color/white" 
+	        android:textStyle="bold"
 	        android:textSize="@dimen/font_cabecera" />
 	        
 	</LinearLayout>
@@ -84,7 +85,8 @@
             	 android:id="@+id/viewPager2" 
 		         android:layout_width="match_parent" 
 		         android:layout_height="match_parent" 
-		         android:src="@drawable/imanodisp" />
+		         android:src="@drawable/imanodisp"
+		         android:background="@drawable/pb_2" />
  		</LinearLayout>	    
 	    
     </LinearLayout>
