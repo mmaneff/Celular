@@ -25,6 +25,14 @@ public class Utils {
         R.drawable.pb_fibertel
     };
 	
+	public final static int[] IMAGENES_PUBLICIDAD_VERTICAL_IDS = { R.drawable.publicidad_vertical_1, 
+		R.drawable.publicidad_vertical_2, R.drawable.publicidad_vertical_3 
+	};
+	
+	public final static int[] IMAGENES_PUBLICIDAD_HORIZONTAL_IDS = { R.drawable.publicidad_horizontal_2, 
+		R.drawable.publicidad_horizontal_3 
+	};
+	
 	/**
 	 * 
 	 * @param negocio

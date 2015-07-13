@@ -160,7 +160,8 @@ public class Principal extends Activity implements HiddenFragment.TaskCallbacks 
      */
     private void iniciarPublicidad() {
         FragmentManager fg = getFragmentManager();
-        fragment = new HiddenFragment(Utils.IMAGENES_PRINCIPAL_IDS.length);
+        //fragment = new HiddenFragment(Utils.IMAGENES_PRINCIPAL_IDS.length);
+        fragment = new HiddenFragment(Utils.IMAGENES_PUBLICIDAD_HORIZONTAL_IDS.length);
         FragmentTransaction transaction = fg.beginTransaction();
         transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
         transaction.commit();
@@ -197,7 +198,8 @@ public class Principal extends Activity implements HiddenFragment.TaskCallbacks 
 
 	@Override
 	public void onProgressUpdate(int index) {
-		imgPublicidad.setImageResource(Utils.IMAGENES_PRINCIPAL_IDS[index]);
+		//imgPublicidad.setImageResource(Utils.IMAGENES_PRINCIPAL_IDS[index]);
+		imgPublicidad.setImageResource(Utils.IMAGENES_PUBLICIDAD_HORIZONTAL_IDS[index]);
         Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         imgPublicidad.startAnimation(rotateImage);		
 	}

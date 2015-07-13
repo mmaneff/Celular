@@ -514,7 +514,8 @@ public class SubCategoria extends Activity implements HiddenFragment.TaskCallbac
      */
     private void iniciarPublicidad() {
         FragmentManager fg = getFragmentManager();
-        fragment = new HiddenFragment(Utils.IMAGENES_SUBCATEGORIA_IDS.length);
+        //fragment = new HiddenFragment(Utils.IMAGENES_SUBCATEGORIA_IDS.length);
+        fragment = new HiddenFragment(Utils.IMAGENES_PUBLICIDAD_VERTICAL_IDS.length);
         FragmentTransaction transaction = fg.beginTransaction();
         transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
         transaction.commit();
@@ -559,7 +560,8 @@ public class SubCategoria extends Activity implements HiddenFragment.TaskCallbac
 
 	@Override
 	public void onProgressUpdate(int index) {
-		imgPublicidad.setImageResource(Utils.IMAGENES_SUBCATEGORIA_IDS[index]);
+		//imgPublicidad.setImageResource(Utils.IMAGENES_SUBCATEGORIA_IDS[index]);
+		imgPublicidad.setImageResource(Utils.IMAGENES_PUBLICIDAD_VERTICAL_IDS[index]);
         Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         imgPublicidad.startAnimation(rotateImage);
 	}

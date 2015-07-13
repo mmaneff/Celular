@@ -94,7 +94,7 @@ public class HiddenFragment extends Fragment {
         protected Long doInBackground(Integer... params) {        	
         	try {
         		for(int i = 0; i < params[0]; i++) {
-        			Thread.sleep(10000);
+        			Thread.sleep(5000);
     				if(!isCancelled())
                         publishProgress(i);
                     else 
