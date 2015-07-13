@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   	<array name="imagenes">
+        <item>@drawable/iconoalimentos</item>
+        <item>@drawable/iconoauto</item>
+        <item>@drawable/iconobanco</item>
+        <item>@drawable/iconobelleza</item>
+        <item>@drawable/iconoboutique</item>
+        <item>@drawable/iconoconstruccion</item>
+        <item>@drawable/iconohogar</item>
+        <item>@drawable/iconoeducacion</item>
+        <item>@drawable/iconoemergencia</item>
+        <item>@drawable/iconoeventosyfiestas</item>
+        <item>@drawable/iconogastronomia</item>
+        <item>@drawable/iconoimprenta</item>
+        <item>@drawable/iconoprofesionales</item>
+        <item>@drawable/iconoboutique</item>
+        <item>@drawable/iconosalud</item>
+        <item>@drawable/iconoseguridad</item>
+        <item>@drawable/iconoservicios</item>
+        <item>@drawable/iconoserviciospublicos</item>
+        <item>@drawable/iconoshopping</item>
+        <item>@drawable/iconotiempoyrecreacion</item>
+        <item>@drawable/iconotransportes</item>
+        <item>@drawable/iconoturismo</item>
+        <item>@drawable/neg_defecto</item>
+        <item>@drawable/neg_corroto</item>
+        <item>@drawable/neg_lacarlota</item>
+        <item>@drawable/neg_ananda</item>
+        <item>@drawable/neg_dontoribio</item>        
+        <item>@drawable/neg_atlas</item>
+        <item>@drawable/neg_cinemacenter</item>
+        <item>@drawable/neg_cinesolar</item>
+        <item>@drawable/neg_marathon</item>
+        <item>@drawable/neg_gemsa</item>
+        <item>@drawable/neg_ingalinasuspension</item>
+        <item>@drawable/neg_italmoto</item>        
+    </array>    
+</resources>

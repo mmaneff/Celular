@@ -95,8 +95,8 @@
         android:layout_weight="1.3"
         android:gravity="center" >
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
+        <ImageView
+            android:id="@+id/imgPublicidad"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/publicidad"

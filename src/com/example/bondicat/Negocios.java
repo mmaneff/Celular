@@ -3,8 +3,11 @@ package com.example.bondicat;
 import java.util.ArrayList;
 
 import com.example.entidades.Comercio;
+import com.example.publicidad.Utils;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,15 +18,29 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
-public class Negocios extends Activity implements LocationListener{
+public class Negocios extends Activity implements LocationListener, HiddenFragment.TaskCallbacks{
 
+	/*
+    Etiqueta de referencia del fragmento invisible
+     */
+    public static final String HIDDEN_FRAGMENT_TAG = "NegocioFragment";
+    
+	/*
+    Instancia del Fragmento
+     */
+    HiddenFragment fragment;
+    
     //A good practice is to define database field names as constants
     private static final String TABLE_NAME = "comercio";
     private static final String FRIEND_ID = "_id";
@@ -33,6 +50,7 @@ public class Negocios extends Activity implements LocationListener{
     private ListView listView;
     private ArrayList comercios;
     private TextView tvTituloNegocio;
+    private ImageView imgPublicidad;
 
     ListView lstOpciones;
     int idcategoria;
@@ -42,6 +60,7 @@ public class Negocios extends Activity implements LocationListener{
     String latitud;
     String subcategoria;
     int colorTexto;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +100,10 @@ public class Negocios extends Activity implements LocationListener{
 
             }
         });
+        
+     // Obtener referencia del fragmento
+        fragment = (HiddenFragment)getFragmentManager().
+                findFragmentByTag(HIDDEN_FRAGMENT_TAG);
     }
 
     private void CargarLista2() {
@@ -678,6 +701,76 @@ public class Negocios extends Activity implements LocationListener{
         database.close();
         return comercios;
     }
+    
+    /**************************************************************************************
+     * Esto es lo agregado por Mateo para la publiciad y funciona
+     ***************************************************************************************/
+    
+    /**
+     * 
+     */
+    private void iniciarPublicidad() {
+        FragmentManager fg = getFragmentManager();
+        fragment = new HiddenFragment(Utils.IMAGENES_NEGOCIO_IDS.length);
+        FragmentTransaction transaction = fg.beginTransaction();
+        transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
+        transaction.commit();
+    }
+    
+    /**
+     * Es en este lugar en donde lanzo las animaciones de la publicidad
+     */
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	Log.i("onResume", "Categorias - Cargo y muestro la publicidad");
+    	//Inicio la publicidad
+        iniciarPublicidad();  
+    }
+    
+    /**
+     * En esta sección de detiene la publicidad
+     */
+    @Override
+    protected void onPause() {
+    	// TODO Auto-generated method stub
+    	super.onPause();
+    	Log.i("onPause", "Categorias - Detengo publicidad y libero recursos");
+    	//Detengo la publicidad
+    	fragment.publicityTask.cancel(true);
+    	fragment = null;
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	this.finish();
+    }
 
+    @Override
+	public void onPreExecute() {
+		imgPublicidad = (ImageView)findViewById(R.id.imgPublicidad);
+	}
+
+	@Override
+	public void onProgressUpdate(int index) {
+		imgPublicidad.setImageResource(Utils.IMAGENES_NEGOCIO_IDS[index]);
+        Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        imgPublicidad.startAnimation(rotateImage);
+	}
+
+	@Override
+	public void onCancelled() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPostExecute() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

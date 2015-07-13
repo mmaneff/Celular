@@ -1,18 +1,23 @@
 package com.example.bondicat;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import com.example.publicidad.Utils;
 import com.facebook.Settings;
 import com.facebook.widget.LikeView;
 
+
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.Signature;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,13 +25,23 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 
-public class Principal extends Activity {
+public class Principal extends Activity implements HiddenFragment.TaskCallbacks {
 
+	/*
+    Etiqueta de referencia del fragmento invisible
+     */
+    public static final String HIDDEN_FRAGMENT_TAG = "PrincipalFragment";
+    
     //Miembros privados
-	private Handler mHandler = null;	
 	private ImageView imgPublicidad;
-	public int currentImageIndex = 0;
+	
+	/*
+    Instancia del Fragmento
+     */
+    HiddenFragment fragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,21 +50,33 @@ public class Principal extends Activity {
 
         //Inicializo el SDK de facebook
         iniciarFacebookSdk();
+        //Obtengo una key hash para conectarme con facebook
+        getKeyHash();
         
         //Personalizo la fuente usada
         personalizarFuente();
 
-        
-        // cambiarImagen();
-        /*
-        PagerAdapter adapter = new PublicidadPrincipalAdapter(Principal.this);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(0);
-        
-        mostrarPublicidad();
-        */
+        // Obtener referencia del fragmento
+        fragment = (HiddenFragment)getFragmentManager().
+                findFragmentByTag(HIDDEN_FRAGMENT_TAG);
     }
+    
+    private void getKeyHash() {
+	    try {
+	        PackageInfo info = getPackageManager().getPackageInfo("com.example.bondicat", PackageManager.GET_SIGNATURES);
+	        for (Signature signature : info.signatures) {
+	        	MessageDigest md = MessageDigest.getInstance("SHA");
+	            md.update(signature.toByteArray());
+	            Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+	        }	        
+	    }
+    	catch (NameNotFoundException e) {
+    		Log.e("NameNotFoundException", e.getMessage());
+    	} 
+    	catch (NoSuchAlgorithmException e) {
+    		Log.e("NoSuchAlgorithmException", e.getMessage());
+    	}
+	}
     
     /**
      * Inicializa el SDK de facebook para hacer el like de la pagina.
@@ -57,6 +84,7 @@ public class Principal extends Activity {
     private void iniciarFacebookSdk() {
     	// To initialize Facebook SDK in your app
         Settings.sdkInitialize(getApplicationContext());
+    	
         // Get LikeView button
         LikeView likeView = (LikeView) findViewById(R.id.like_view);
         // Set the object for which you want to get likes from your users (Photo, Link or even your FB Fan page)
@@ -128,6 +156,17 @@ public class Principal extends Activity {
     }
     
     /**
+     * 
+     */
+    private void iniciarPublicidad() {
+        FragmentManager fg = getFragmentManager();
+        fragment = new HiddenFragment(Utils.IMAGENES_PRINCIPAL_IDS.length);
+        FragmentTransaction transaction = fg.beginTransaction();
+        transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
+        transaction.commit();
+    }
+    
+    /**
      * Es en este lugar en donde lanzo las animaciones de la publicidad
      */
     @Override
@@ -135,8 +174,8 @@ public class Principal extends Activity {
     	// TODO Auto-generated method stub
     	super.onResume();
     	Log.i("onResume", "Principal - Cargo y muestro la publicidad");
-    	//Cargo la publicidad
-    	cargarPublicidad();
+    	//Inicio la publicidad
+        iniciarPublicidad();    	
     }
     
     /**
@@ -145,49 +184,32 @@ public class Principal extends Activity {
     @Override
     protected void onPause() {
     	// TODO Auto-generated method stub
-    	super.onPause();
-    	if(mHandler != null)
-    		mHandler = null;
+    	super.onPause();    	
     	Log.i("onPause", "Principal - Detengo publicidad y libero recursos");
+    	//Detengo la publicidad
+    	fragment.publicityTask.cancel(true);
     }
     
-    /**
-     * 
-     */
-    private void cargarPublicidad() {
-    	mHandler = new Handler();
-    	
-    	// Create runnable for posting
-        final Runnable mUpdateResults = new Runnable() {
-            public void run() {                
-                AnimateAndSlideShow();
-            }
-        };
-        
-        int delay = 1000; // delay for 1 sec.
-        int period = 10000; // repeat every 4 sec.
+	@Override
+	public void onPreExecute() {
+		imgPublicidad = (ImageView)findViewById(R.id.imgPublicidad);
+	}
 
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-        	public void run() {
-        		mHandler.post(mUpdateResults);
-        	}
-        }, delay, period);
-    }
-    
-    /**
-     * Helper method to start the animation on the splash screen
-     */
-    private void AnimateAndSlideShow() {    	
-    	imgPublicidad = (ImageView)findViewById(R.id.imgPublicidad);
-    	imgPublicidad.setImageResource(Utils.IMAGENES_PRINCIPAL_IDS[currentImageIndex]);
-           
-    	currentImageIndex++;
-    	if(currentImageIndex >= Utils.IMAGENES_PRINCIPAL_IDS.length)
-    		currentImageIndex = 0;
-        
+	@Override
+	public void onProgressUpdate(int index) {
+		imgPublicidad.setImageResource(Utils.IMAGENES_PRINCIPAL_IDS[index]);
         Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        imgPublicidad.startAnimation(rotateImage);            
-    }
+        imgPublicidad.startAnimation(rotateImage);		
+	}
+
+	@Override
+	public void onCancelled() {
+		// TODO Auto-generated method stub		
+	}
+
+	@Override
+	public void onPostExecute() {
+		// TODO Auto-generated method stub		
+	}
 
 }

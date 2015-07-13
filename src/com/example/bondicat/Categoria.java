@@ -2,12 +2,18 @@ package com.example.bondicat;
 
 import java.util.ArrayList;
 
+import com.example.publicidad.Utils;
+
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -26,11 +32,22 @@ import android.widget.TextView;
  * @author emaneff
  *
  */
-public class Categoria extends Activity {
+public class Categoria extends Activity implements HiddenFragment.TaskCallbacks {
 
+	/*
+    Etiqueta de referencia del fragmento invisible
+     */
+    public static final String HIDDEN_FRAGMENT_TAG = "CategoriaFragment";
+    
+	/*
+    Instancia del Fragmento
+     */
+    HiddenFragment fragment;
+    
 	//Variables privadas
     private ListView lstOpciones;
     private EditText etBuscar;
+    private ImageView imgPublicidad;
 
     /**
      * Se ejecuta cuando se crea la actividad
@@ -68,8 +85,23 @@ public class Categoria extends Activity {
     	        }
     	        return handled;
     	    }
-    	});        
+    	});
         
+     // Obtener referencia del fragmento
+        fragment = (HiddenFragment)getFragmentManager().
+                findFragmentByTag(HIDDEN_FRAGMENT_TAG);
+        
+    }
+    
+    /**
+     * 
+     */
+    private void iniciarPublicidad() {
+        FragmentManager fg = getFragmentManager();
+        fragment = new HiddenFragment(Utils.IMAGENES_CATEGORIA_IDS.length);
+        FragmentTransaction transaction = fg.beginTransaction();
+        transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
+        transaction.commit();
     }
     
     /**
@@ -80,6 +112,8 @@ public class Categoria extends Activity {
     	// TODO Auto-generated method stub
     	super.onResume();
     	Log.i("onResume", "Categorias - Cargo y muestro la publicidad");
+    	//Inicio la publicidad
+        iniciarPublicidad();  
     }
     
     /**
@@ -90,8 +124,18 @@ public class Categoria extends Activity {
     	// TODO Auto-generated method stub
     	super.onPause();
     	Log.i("onPause", "Categorias - Detengo publicidad y libero recursos");
+    	//Detengo la publicidad
+    	fragment.publicityTask.cancel(true);
+    	fragment = null;
     }
   
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	this.finish();
+    }
+    
     /**
      * Este metodo carga la lista. Además el fondo de cada elemento lo pone en 
      * base a cada imagen guardada en el archivo de recurso. 
@@ -140,12 +184,30 @@ public class Categoria extends Activity {
     	
         return items;
     }
-    
-    
-    public void cargarbanners(){
-        ImageView banner=(ImageView)findViewById(R.id.imageView2);
-        banner.setImageDrawable(getResources().getDrawable(R.drawable.havana));
-    }
+
+	@Override
+	public void onPreExecute() {
+		imgPublicidad = (ImageView)findViewById(R.id.imgPublicidad);		
+	}
+
+	@Override
+	public void onProgressUpdate(int index) {
+		imgPublicidad.setImageResource(Utils.IMAGENES_CATEGORIA_IDS[index]);
+        Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        imgPublicidad.startAnimation(rotateImage);		
+	}
+
+	@Override
+	public void onCancelled() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPostExecute() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 

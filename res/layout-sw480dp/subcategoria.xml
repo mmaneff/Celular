@@ -100,8 +100,8 @@
             android:layout_height="match_parent"
             android:layout_weight="2" >
 
-            <android.support.v4.view.ViewPager
-            	android:id="@+id/viewPager"
+            <ImageView
+            	android:id="@+id/imgPublicidad"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/imanodisp2"

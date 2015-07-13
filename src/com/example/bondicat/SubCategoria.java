@@ -2,10 +2,17 @@ package com.example.bondicat;
 
 import java.util.ArrayList;
 
+import com.example.publicidad.Utils;
+
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,11 +20,23 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
-public class SubCategoria extends Activity{
+public class SubCategoria extends Activity implements HiddenFragment.TaskCallbacks {
 	
+	/*
+    Etiqueta de referencia del fragmento invisible
+     */
+    public static final String HIDDEN_FRAGMENT_TAG = "SubCategoriaFragment";
+    
+	/*
+    Instancia del Fragmento
+     */
+    HiddenFragment fragment;
+    
+	//Variables privadas
     private int idcategoria;
     private String nombre;
     private ListView lstOpciones;
+    private ImageView imgPublicidad;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +60,10 @@ public class SubCategoria extends Activity{
                 startActivity(intent);
             }
         });
+        
+        // Obtener referencia del fragmento
+        fragment = (HiddenFragment)getFragmentManager().
+                findFragmentByTag(HIDDEN_FRAGMENT_TAG);
     }       
     
     /**
@@ -485,6 +508,73 @@ public class SubCategoria extends Activity{
         }
         return items;
     }
+
+    /**
+     * 
+     */
+    private void iniciarPublicidad() {
+        FragmentManager fg = getFragmentManager();
+        fragment = new HiddenFragment(Utils.IMAGENES_SUBCATEGORIA_IDS.length);
+        FragmentTransaction transaction = fg.beginTransaction();
+        transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
+        transaction.commit();
+    }
+    
+    /**
+     * Es en este lugar en donde lanzo las animaciones de la publicidad
+     */
+    @Override
+    protected void onResume() {
+    	// TODO Auto-generated method stub
+    	super.onResume();
+    	Log.i("onResume", "Categorias - Cargo y muestro la publicidad");
+    	//Inicio la publicidad
+        iniciarPublicidad();  
+    }
+    
+    /**
+     * En esta sección de detiene la publicidad
+     */
+    @Override
+    protected void onPause() {
+    	// TODO Auto-generated method stub
+    	super.onPause();
+    	Log.i("onPause", "Categorias - Detengo publicidad y libero recursos");
+    	//Detengo la publicidad
+    	fragment.publicityTask.cancel(true);
+    	fragment = null;
+    }
+    
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	this.finish();
+    }
+    
+	@Override
+	public void onPreExecute() {
+		imgPublicidad = (ImageView)findViewById(R.id.imgPublicidad);
+	}
+
+	@Override
+	public void onProgressUpdate(int index) {
+		imgPublicidad.setImageResource(Utils.IMAGENES_SUBCATEGORIA_IDS[index]);
+        Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        imgPublicidad.startAnimation(rotateImage);
+	}
+
+	@Override
+	public void onCancelled() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onPostExecute() {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 
