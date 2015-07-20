@@ -36,6 +36,7 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 		
 		Bundle bundle = this.getIntent().getExtras();
         int datos_activity = bundle.getInt("datos_activity");
+        String colorName = bundle.getString("colorName");
         idnegocio = bundle.getLong("ID");
         
         if(datos_activity == 1)
@@ -46,12 +47,13 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 		PersonalizarFuente();
 			
 		// inicializarMapa();
+		setBackgroundColor(colorName);
 		inicializarComponentes();
 		Descripcion();
 
 		Button btnmapa = (Button) findViewById(R.id.btnMapa);
 
-		if (comercio.getDomicilio().equals("")) {
+		if (comercio.getDomicilio() == null) {
 			btnmapa.setVisibility(View.INVISIBLE);
 		}
 
@@ -194,6 +196,45 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 		btnMapa.setTypeface(breeRegularFont);
 		btnFavorito.setTypeface(breeRegularFont);
 	}
+	
+	private void setBackgroundColor(String colorName) {
+		//Instancio botones y la actividad principal
+		LinearLayout dato_1 = (LinearLayout) findViewById(R.id.dato_1);
+		Button btnRegresar = (Button) findViewById(R.id.btnRegresar);
+		Button btnMapa = (Button) findViewById(R.id.btnMapa);
+		Button btnFavorito = (Button) findViewById(R.id.btnLlamar);
+		
+		if(colorName.equalsIgnoreCase("red_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.red_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.red_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.red_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.red_900));
+		} 
+		else if(colorName.equalsIgnoreCase("orange_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.orange_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.orange_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.orange_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.orange_900));
+		} 
+		else if(colorName.equalsIgnoreCase("yellow_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.yellow_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.yellow_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.yellow_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.yellow_900));
+		}
+		else if(colorName.equalsIgnoreCase("green_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.green_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.green_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.green_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.green_900));
+		}
+		else if(colorName.equalsIgnoreCase("blue_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.blue_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.blue_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.blue_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.blue_900));
+		}
+	}
 
 	private void Descripcion() {
 
@@ -201,43 +242,82 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 				"comercio.db");
 		database = dbConexion.openDataBase();
 		Cursor comercioCursor = database.rawQuery(
-				"SELECT * FROM comercio WHERE id = ?",
+				"SELECT id, correoelectronico, detalle, domicilio, latitud, longitud, razonsocial, sitioweb, telefono, telefono2, telefono3 FROM comercio WHERE id = ?",
 				new String[] { String.valueOf(idnegocio) });
 		if (comercioCursor.moveToFirst()) {
 			do {
 				if (comercioCursor.getString(0) != null) {
 					comercio.setId(comercioCursor.getLong(0));
 				}
-				if (comercioCursor.getString(2) != null) {
-					comercio.setCorreoElectronico(comercioCursor.getString(2));
-				}
-				if (comercioCursor.getString(3) != null) {
-					comercio.setDetalle(comercioCursor.getString(3));
-				}
-				if (comercioCursor.getString(4) != null) {
-					comercio.setDomicilio(comercioCursor.getString(4));
-				}
-				if (comercioCursor.getString(5) != null) {
-					comercio.setLatitud(comercioCursor.getString(5));
-				}
-				if (comercioCursor.getString(6) != null) {
-					comercio.setLongitud(comercioCursor.getString(6));
-				}
-				if (comercioCursor.getString(7) != null) {
-					comercio.setRazonSocial(comercioCursor.getString(7));
-				}
-				if (comercioCursor.getString(8) != null) {
-					comercio.setSitioWeb(comercioCursor.getString(8));
-				}
-				if (comercioCursor.getString(10) != null) {
-					comercio.setTelefono(comercioCursor.getString(10));
-				}
-				if (comercioCursor.getString(11) != null) {
-					comercio.setTelefono2(comercioCursor.getString(11));
-				}
-				if (comercioCursor.getString(12) != null) {
-					comercio.setTelefono3(comercioCursor.getString(12));
-				}
+				if(comercioCursor.getString(1) != null) {
+                    comercio.setCorreoElectronico(comercioCursor.getString(1));
+                }
+                else {
+                	comercio.setCorreoElectronico("");
+                }
+                	
+                if(comercioCursor.getString(2) != null) {
+                    comercio.setDetalle(comercioCursor.getString(2));
+                }
+                else {
+                	comercio.setDetalle("");
+                }
+                
+                if(comercioCursor.getString(3) != null) {
+                    comercio.setDomicilio(comercioCursor.getString(3));
+                }
+                else {
+                	comercio.setDomicilio("");
+                }
+                
+                if(comercioCursor.getString(4) != null) {
+                    comercio.setLatitud(comercioCursor.getString(4));
+                }
+                else {
+                	comercio.setLatitud("");
+                }
+                
+                if(comercioCursor.getString(5) != null) {
+                    comercio.setLongitud(comercioCursor.getString(5));
+                }
+                else {
+                	comercio.setLongitud("");
+                }
+                
+                if(comercioCursor.getString(6) != null) {
+                    comercio.setRazonSocial(comercioCursor.getString(6));
+                }
+                else {
+                	comercio.setRazonSocial("");
+                }
+                
+                if(comercioCursor.getString(7) != null) {
+                    comercio.setSitioWeb(comercioCursor.getString(7));
+                }
+                else {
+                	comercio.setSitioWeb("");
+                }
+                
+                if(comercioCursor.getString(8) != null) {
+                    comercio.setTelefono(comercioCursor.getString(8));
+                }
+                else {
+                	comercio.setTelefono("");
+                }
+                
+                if(comercioCursor.getString(9) != null) {
+                	comercio.setTelefono2(comercioCursor.getString(9));
+                }
+                else {
+                	comercio.setTelefono2("");
+                }
+                
+                if(comercioCursor.getString(10) != null) {
+                	comercio.setTelefono3(comercioCursor.getString(10));
+                }
+                else {
+                	comercio.setTelefono3("");
+                }
 			} while (comercioCursor.moveToNext());
 		}
 		comercioCursor.close();

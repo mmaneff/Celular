@@ -75,9 +75,8 @@
 			<ImageView
 			    android:id="@+id/imgPublicidad"
 			    android:layout_width="fill_parent"
-			    android:layout_height="fill_parent"			    
-			    android:src="@drawable/imanodisp2"
-			    android:background="@drawable/pb_claro"
+			    android:layout_height="fill_parent"
+				android:background="@drawable/publicidad_vertical_3"
 			    android:scaleType="fitXY" />
         
 		</LinearLayout>

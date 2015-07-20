@@ -64,7 +64,8 @@ public class CategoriaAdapter extends BaseAdapter {
 	      view = inflater.inflate(R.layout.lista_categoria, null);
 	    }
 	    
-	    try {	    	
+	    try {	
+	    	
 		    //Recupero la categoria
 		    Categoria categoria = list.get(position);
 		    
@@ -78,7 +79,8 @@ public class CategoriaAdapter extends BaseAdapter {
 		    
 		    //Muestro el texto de cada categoria
 		    TextView nombre = (TextView) view.findViewById(R.id.tvNombreCategoria);
-		    nombre.setText(categoria.nombre);		    
+		    nombre.setText(categoria.nombre);	
+		    	    
 	    }
 	    catch(Exception ex) {
 	    	Log.e(LOGCAT, ex.getMessage());

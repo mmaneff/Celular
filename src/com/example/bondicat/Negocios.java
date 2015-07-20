@@ -90,9 +90,10 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position,long id) {
                 if(id > 0){
+                	int vista = getVista(id);
                     Bundle bundle = new Bundle();
                     bundle.putLong("ID", id );
-                    bundle.putInt("datos_activity", 1);                    
+                    bundle.putInt("datos_activity", vista);                    
                     Intent intent = new Intent(Negocios.this, Datos.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
@@ -231,42 +232,45 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 nombre.equals("SUPER/HIPER") || nombre.equals("VERDULERIA") ) {
         	
             //rl.setBackgroundColor(Color.parseColor("#2F5279"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.brown_400));
-        	colorTexto = R.color.brown_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
+        	colorTexto = R.color.red_800;
         } else if( (nombre.equals("COMPRAVENTA") || (nombre.equals("MECANICO")) ||
                 nombre.equals("MOTO")) || nombre.equals("NEUMATICOS") ||
-                nombre.equals("REPUESTOS") || nombre.equals("COMPRA/VENTA") ) {
+                nombre.equals("REPUESTOS") || nombre.equals("COMPRA/VENTA") || 
+                nombre.equals("ELECTRICISTA")) {
         	//rl.setBackgroundColor(Color.parseColor("#8B4788"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_400));
-        	colorTexto = R.color.green_400;
-        } else if( nombre.equals("PRESTAMOS")) {
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_800));
+        	colorTexto = R.color.orange_800;
+        } else if( nombre.equals("PRESTAMOS") || nombre.equals("BANCOS")) {
         	//rl.setBackgroundColor(Color.parseColor("#028228"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.indigo_400));
-        	colorTexto = R.color.indigo_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
+        	colorTexto = R.color.yellow_800;
         } else if( (nombre.equals("CAMA SOLAR") || (nombre.equals("CENTRO DE ESTETICA")) ||
                 nombre.equals("COSMETICOS/TOLOGOS")) || nombre.equals("PELUQUERIA") ||
-                nombre.equals("PERFUMERIA") || nombre.equals("RELOJERIA/JOYERIA") ) {
+                nombre.equals("PERFUMERIA") || nombre.equals("RELOJERIA/JOYERIA") || 
+                nombre.equals("MAKE UP") || nombre.equals("MODISTA") || nombre.equals("PODOLOGO") ) {
         	//rl.setBackgroundColor(Color.parseColor("#6B37C1"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_400));
-        	colorTexto = R.color.red_400;
-        } else if( (nombre.equals("CASA DEPORTIVA") || (nombre.equals("IND DEP")) ||
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
+        	colorTexto = R.color.green_800;
+        } else if( (nombre.equals("CASA DE DEPORTES") || (nombre.equals("IND DEP")) ||
                 nombre.equals("INDUMENTARIA DEPORTIVA")) || nombre.equals("INDUMENTARIA MASCULINA") ||
                 nombre.equals("INDUMENTARIA MUJER") || nombre.equals("INDUMENTARIA NIÃ‘O") ||
-                nombre.equals("INDUMENTARIA NIÑOS") || nombre.equals("JOYERIA") ||
+                nombre.equals("INDUMENTARIA BEBES/NIÑOS") || nombre.equals("JOYERIA") ||
                 nombre.equals("RELOJERIA/JOYERIA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#EC4700"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_400));
-        	colorTexto = R.color.orange_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.blue_800));
+        	colorTexto = R.color.blue_800;
         } else if( (nombre.equals("AIRE ACONDICIONADO") || (nombre.equals("AUTOMATIZACION DE PORTONES")) ||
                 nombre.equals("CERRAJERIA")) || nombre.equals("CORRALON") ||
                 nombre.equals("ELECTRICIDAD") || nombre.equals("FERRETERIA") ||
                 nombre.equals("GASISTA") || nombre.equals("HERRERIA") ||
                 nombre.equals("INSTALACION DE LONAS") || nombre.equals("MADERAS") ||
-                nombre.equals("PISOS Y DECKS") || nombre.equals("PORTONES ELECTRICOS") ||
-                nombre.equals("VIDRIERIA") ) {
+                nombre.equals("PISOS Y CERAMICOS") || nombre.equals("PORTONES ELECTRICOS") ||
+                nombre.equals("VIDRIERIA") || nombre.equals("ALUMINIO") || nombre.equals("CARPINTERO") || 
+                nombre.equals("PORTONES ELECTRICOS")) {
         	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.pink_400));
-        	colorTexto = R.color.pink_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
+        	colorTexto = R.color.purple_800;
         } else if( (nombre.equals("AROMATIZANTES") || (nombre.equals("BAZAR")) ||
                 nombre.equals("FUMIGACION")) || nombre.equals("LONERA") ||
                 nombre.equals("MERCERIA/REGALERIA") || nombre.equals("MUEBLES") ||
@@ -274,56 +278,57 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 nombre.equals("REGALERIA") || nombre.equals("SERVICIO PILETA") ||
                 nombre.equals("SERVICIO DE LIMPIEZA") || nombre.equals("VIVERO") ) {
         	//rl.setBackgroundColor(Color.parseColor("#AA413E"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.teal_400));
-        	colorTexto = R.color.teal_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
+        	colorTexto = R.color.red_800;
         } else if( (nombre.equals("COLEGIO") || (nombre.equals("INSTITUTO DE INGLES")) ||
-                nombre.equals("LIBRERIA")) || nombre.equals("PARTICULARES") ||
+                nombre.equals("LIBRERIA")) || nombre.equals("JARDINES Y MATERNALES") ||
                 nombre.equals("PARTICULARES PRI/SEC") || nombre.equals("PARTICULARES SECUNDARIA") ||
                 nombre.equals("PROF. DE IDIOMAS(FRANCES)") || nombre.equals("PROF. DE IDIOMAS(INGLES)") ||
                 nombre.equals("LIBRERIA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#956500"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.brown_400));
-        	colorTexto = R.color.brown_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
+        	colorTexto = R.color.yellow_800;
         } else if( (nombre.equals("BOMBEROS") || (nombre.equals("COMISARIA")) ||
                 nombre.equals("HOSPITAL")) || nombre.equals("MUNICIPALIDAD") ||
                 nombre.equals("POLICIA") || nombre.equals("SERVICIO SACERDOTAL") ||
-                nombre.equals("TERMINAL OMNIBUS") ) {
+                nombre.equals("PATRULLA MOTORIZADA") || nombre.equals("EMERGENCIA MEDICA")) {
         	//rl.setBackgroundColor(Color.parseColor("#006FA4"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_400));
-        	colorTexto = R.color.green_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
+        	colorTexto = R.color.green_800;
         } else if( (nombre.equals("ALQ. DE BARRAS") || (nombre.equals("ALQ. DE LIVINGS")) ||
                 nombre.equals("CARPAS")) || nombre.equals("CATERING") ||
-                nombre.equals("COTILLON Y DISFRACES") || nombre.equals("DELIVERY DE ALCOHOL") ||
-                nombre.equals("FOTOGRAFIA/FILMACION") || nombre.equals("INFLABLES Y JUEGOS") ||
-                nombre.equals("MAGOS") || nombre.equals("MUSICA/ILUMINACION") ||
+                nombre.equals("COTILLON/DISFRAZ") || nombre.equals("DELIVERY DE ALCOHOL") ||
+                nombre.equals("FOTOGRAFIA/FILMACION") || nombre.equals("INFLABLES/JUEGOS") ||
+                nombre.equals("MAGOS") || nombre.equals("MUSICA/ILUMINACION") || nombre.equals("PASTELERIA") ||
                 nombre.equals("SALONES DE FIESTAS") || nombre.equals("SALONES INFANTILES") ||
                 nombre.equals("TITERES") ) {
         	//rl.setBackgroundColor(Color.parseColor("#CC00CC"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.indigo_400));
-        	colorTexto = R.color.indigo_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
+        	colorTexto = R.color.deepPurple_800;
         } else if( (nombre.equals("BAR") || (nombre.equals("CAFETERIA")) ||
                 nombre.equals("RESTOBAR")) || nombre.equals("CARNICERIA") ||
                 nombre.equals("EMPANADAS") || nombre.equals("HELADERIA") ||
                 nombre.equals("PANIFICACION") || nombre.equals("PASTELERIA") ||
                 nombre.equals("PIZZERIA") || nombre.equals("RESTAURANTE") ||
-                nombre.equals("ROSTICERIA") || nombre.equals("SANGUCHERIA") ) {
+                nombre.equals("ROTISERIA") || nombre.equals("SANGUCHERIA") || 
+                nombre.equals("PUB") || nombre.equals("SUSHI")) {
         	//rl.setBackgroundColor(Color.parseColor("#00AE2C"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_400));
-        	colorTexto = R.color.red_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
+        	colorTexto = R.color.purple_800;
         } else if( (nombre.equals("IMPRESIONES") ) ) {
         	//rl.setBackgroundColor(Color.parseColor("#9B2F1C"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_400));
-        	colorTexto = R.color.orange_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
+        	colorTexto = R.color.red_800;
         } else if( (nombre.equals("ABOGADO") || (nombre.equals("AGRIMENSOR")) ||
                 nombre.equals("ARQUITECTO")) || nombre.equals("CONTADOR") ||
                 nombre.equals("VETERINARIO") ) {
         	//rl.setBackgroundColor(Color.parseColor("#76329A"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.pink_400));
-        	colorTexto = R.color.pink_400;
-        } else if( (nombre.equals("OTROS") ) ) {
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
+        	colorTexto = R.color.yellow_800;
+        } else if( (nombre.equals("METROPOLITANA") || (nombre.equals("CIUDADANA"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#326332"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.teal_400));
-        	colorTexto = R.color.teal_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
+        	colorTexto = R.color.deepPurple_800;
         } else if( (nombre.equals("CENTRO MEDICO") || (nombre.equals("ESPECIALISTA")) ||
                 nombre.equals("FARMACIA")) || nombre.equals("LABORATORIO") ||
                 nombre.equals("NUTRICIONISTA") || nombre.equals("ODONTOLOGO") ||
@@ -331,13 +336,13 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 nombre.equals("PEDAGOGIA") || nombre.equals("PEDIATRA") ||
                 nombre.equals("KINESIOLOGIA/FISIOTERAPIA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#37618E"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.brown_400));
-        	colorTexto = R.color.brown_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
+        	colorTexto = R.color.green_800;
         } else if( (nombre.equals("ALARMAS") || (nombre.equals("SEGUROS")) ||
-                nombre.equals("SERVICIOS DE CAMARAS") ) ) {
+                nombre.equals("SERVICIO DE CAMARAS") || (nombre.equals("SERVICIO DE SEGURIDAD"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#864483"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_400));
-        	colorTexto = R.color.green_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.blue_800));
+        	colorTexto = R.color.blue_800;
         } else if( (nombre.equals("AIRE ACONDICIONADO") || (nombre.equals("ELECTRICISTA")) ||
                 nombre.equals("ELECTRODOMESTICO")) || nombre.equals("FLETES") ||
                 nombre.equals("GASISTA") || nombre.equals("INMOBILIARIA") ||
@@ -345,44 +350,44 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 nombre.equals("PLOMERO") || nombre.equals("SERVICIO DE TELEFONO") ||
                 nombre.equals("SERVICIO DE COMPUTACION") ) {
         	//rl.setBackgroundColor(Color.parseColor("#A4A400"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.indigo_400));
-        	colorTexto = R.color.indigo_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
+        	colorTexto = R.color.deepPurple_800;
         } else if( (nombre.equals("CORREO ARGENTINO") || (nombre.equals("EDET")) ||
-                nombre.equals("GASNOR")) || nombre.equals("SAT") ) {
+                nombre.equals("GASNOR")) || nombre.equals("SAT") || nombre.equals("AEROPARQUE") || 
+                nombre.equals("ANSES") || nombre.equals("ATENCION AL VECINO") || nombre.equals("CANAL 10") || 
+                nombre.equals("CANAL 8") || nombre.equals("BRIGADA DE INVESTIGACION NORTE") || 
+                nombre.equals("CAMION VERDE") || nombre.equals("CENTRO CONTROL DE MONITOREO") || 
+                nombre.equals("COMANDO RADIOELECTRICO") || nombre.equals("DEFENSA CIVIL") || 
+                nombre.equals("LA GACETA")|| nombre.equals("MUNICIPALIDAD") || 
+                nombre.equals("OBRAS PUBLICAS YERBA BUENA") || nombre.equals("TERMINAL OMNIBUS")) {
         	//rl.setBackgroundColor(Color.parseColor("#820228"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_400));
-        	colorTexto = R.color.red_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
+        	colorTexto = R.color.purple_800;
         } else if( (nombre.equals("LAS PALMERAS") || (nombre.equals("PORTAL")) ||
                 nombre.equals("SOLAR")) || nombre.equals("SOLAR MARCOS PAZ") ||
                 nombre.equals("YERBA BUENA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#029930"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_400));
-        	colorTexto = R.color.orange_400;
-        } else if( (nombre.equals("BALLET") || (nombre.equals("BICICLETERIA")) ||
-                nombre.equals("EQUITACION/POLO/CABALGATAS")) || nombre.equals("ESCUELA/CANCHA DE FUTBOL") ||
-                nombre.equals("ESCUELA/CANCHA DE FUTBOL 5") || nombre.equals("GIMNASIA ARTISTICA") ||
-                nombre.equals("GYM") || nombre.equals("MOUNTAIN BIKE") ||
-                nombre.equals("PROF. DE MUSICA (BATERIA)") || nombre.equals("PROF. DE MUSICA (FLAUTA TRAVERSA)") ||
-                nombre.equals("PROF. DE MUSICA (GUITARRA)") || nombre.equals("PROF. DE MUSICA (GUITARRA-PIANO)") ||
-                nombre.equals("PROF. DE MUSICA (LUTHIER)") || nombre.equals("PROF. DE MUSICA (PIANO)") ||
-                nombre.equals("PROF. DE MUSICA (VIOLIN)") || nombre.equals("TALLERES (ARTE)") ||
-                nombre.equals("TENIS") || nombre.equals("VIDEO CLUB") ||
-                nombre.equals("YOGA") ) {
-        	//rl.setBackgroundColor(Color.parseColor("#029D9D"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.pink_400));
-        	colorTexto = R.color.pink_400;
-        } else if( (nombre.equals("REMISERIA") ) ) {
-        	//rl.setBackgroundColor(Color.parseColor("#660033"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.teal_400));
-        	colorTexto = R.color.teal_400;
-        } else if( (nombre.equals("AGENCIA DE VIAJE") || (nombre.equals("BOLETOS OMNIBUS")) ) ) {
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
+        	colorTexto = R.color.red_800;
+        }
+	    else if( (nombre.equals("BALLET") || (nombre.equals("BICICLETERIA")) ||
+	            nombre.equals("ARTES MARCIALES")) || nombre.equals("CASA DE DEPORTES") ||
+	            nombre.equals("CANCHA FUTBOL5") || nombre.equals("NATACION") ||
+	            nombre.equals("GYM") || nombre.equals("MOUNTAIN BIKE") ||
+	            nombre.equals("PERSONAL TRAINER") || nombre.equals("TENIS") || nombre.equals("YOGA") ) {
+	    	//rl.setBackgroundColor(Color.parseColor("#029D9D"));
+	    	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_800));
+	    	colorTexto = R.color.orange_800;
+	    } 
+	    else if( (nombre.equals("AGENCIA DE VIAJE") || (nombre.equals("BOLETOS OMNIBUS")) 
+        		|| (nombre.equals("HOTEL"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#333333"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.brown_400));
-        	colorTexto = R.color.brown_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
+        	colorTexto = R.color.yellow_800;
         } else {
         	//rl.setBackgroundColor(Color.parseColor("#836953"));
-        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_400));
-        	colorTexto = R.color.green_400;
+        	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
+        	colorTexto = R.color.red_800;
         }
     }
 
@@ -559,7 +564,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
 
             ArrayList<Comercio> comercios = getComerciosPorCategoria("AUTOMOTORES");
             for(Comercio comercio : comercios) {
-                items.add(new ItemNegocio(comercio.getId(), comercio.getRazonSocial(),getResources().getDrawable(R.drawable.logoautomotor),"1Km",comercio.getDomicilio()));
+                items.add(new ItemNegocio(comercio.getId(), comercio.getRazonSocial(),getResources().getDrawable(R.drawable.logo),"1Km",comercio.getDomicilio()));
             }
 
             //		    items.add(new ItemNegocio(1, "Automotores Rodriguez Hnos",getResources().getDrawable(R.drawable.logoautomotor),"1Km","Av.Alem 853"));
@@ -584,7 +589,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         }
         if(idcategoria==1 && idsubcategoria==0){
             rl.setBackgroundDrawable(getResources().getDrawable(R.drawable.fondoconstruccion));
-            items.add(new ItemNegocio(1, "Aluminios Belgrano",getResources().getDrawable(R.drawable.logocostruccion),"1Km","Juan Jose Paso 885"));
+            items.add(new ItemNegocio(1, "Aluminios Belgrano",getResources().getDrawable(R.drawable.logo),"1Km","Juan Jose Paso 885"));
             items.add(new ItemNegocio(2, "Alem Vidrios",getResources().getDrawable(R.drawable.imanodisp),"1Km","domicilio"));
 
         }
@@ -655,42 +660,86 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         comercios = new ArrayList<Comercio>();
         ExternalDbOpenHelper dbConexion = new ExternalDbOpenHelper(this, "comercio.db");
         database = dbConexion.openDataBase();
-        Cursor comercioCursor = database.rawQuery("SELECT * FROM comercio WHERE upper(subcategoria) = ?", new String[] {subCategoria.toUpperCase()});
+        Cursor comercioCursor = database.rawQuery("SELECT id, correoelectronico, detalle, domicilio, latitud, longitud, razonsocial, sitioweb, telefono, telefono2, telefono3, vista FROM comercio WHERE upper(subcategoria) = ?", new String[] {subCategoria.toUpperCase()});
         if(comercioCursor.moveToFirst()) {
             do {
                 Comercio comercio = new Comercio();
                 if(comercioCursor.getString(0) != null) {
                     comercio.setId(comercioCursor.getLong(0));
+                }                
+                
+                if(comercioCursor.getString(1) != null) {
+                    comercio.setCorreoElectronico(comercioCursor.getString(1));
                 }
+                else {
+                	comercio.setCorreoElectronico("");
+                }
+                	
                 if(comercioCursor.getString(2) != null) {
-                    comercio.setCorreoElectronico(comercioCursor.getString(2));
+                    comercio.setDetalle(comercioCursor.getString(2));
                 }
+                else {
+                	comercio.setDetalle("");
+                }
+                
                 if(comercioCursor.getString(3) != null) {
-                    comercio.setDetalle(comercioCursor.getString(3));
+                    comercio.setDomicilio(comercioCursor.getString(3));
                 }
+                else {
+                	comercio.setDomicilio("");
+                }
+                
                 if(comercioCursor.getString(4) != null) {
-                    comercio.setDomicilio(comercioCursor.getString(4));
+                    comercio.setLatitud(comercioCursor.getString(4));
                 }
+                else {
+                	comercio.setLatitud("");
+                }
+                
                 if(comercioCursor.getString(5) != null) {
-                    comercio.setLatitud(comercioCursor.getString(5));
+                    comercio.setLongitud(comercioCursor.getString(5));
                 }
+                else {
+                	comercio.setLongitud("");
+                }
+                
                 if(comercioCursor.getString(6) != null) {
-                    comercio.setLongitud(comercioCursor.getString(6));
+                    comercio.setRazonSocial(comercioCursor.getString(6));
                 }
+                else {
+                	comercio.setRazonSocial("");
+                }
+                
                 if(comercioCursor.getString(7) != null) {
-                    comercio.setRazonSocial(comercioCursor.getString(7));
+                    comercio.setSitioWeb(comercioCursor.getString(7));
                 }
+                else {
+                	comercio.setSitioWeb("");
+                }
+                
                 if(comercioCursor.getString(8) != null) {
-                    comercio.setSitioWeb(comercioCursor.getString(8));
+                    comercio.setTelefono(comercioCursor.getString(8));
                 }
+                else {
+                	comercio.setTelefono("");
+                }
+                
+                if(comercioCursor.getString(9) != null) {
+                	comercio.setTelefono2(comercioCursor.getString(9));
+                }
+                else {
+                	comercio.setTelefono2("");
+                }
+                
                 if(comercioCursor.getString(10) != null) {
-                    comercio.setTelefono(comercioCursor.getString(10));
+                	comercio.setTelefono3(comercioCursor.getString(10));
                 }
+                else {
+                	comercio.setTelefono3("");
+                }
+                
                 if(comercioCursor.getString(11) != null) {
-                	comercio.setTelefono2(comercioCursor.getString(11));
-                }
-                if(comercioCursor.getString(12) != null) {
-                	comercio.setTelefono3(comercioCursor.getString(12));
+                	comercio.setVista(comercioCursor.getInt(11));
                 }
                 System.out.println("idComercio=" + comercio.getId());
                 System.out.println("razonSocial=" + comercio.getRazonSocial());
@@ -711,8 +760,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
      */
     private void iniciarPublicidad() {
         FragmentManager fg = getFragmentManager();
-        //fragment = new HiddenFragment(Utils.IMAGENES_NEGOCIO_IDS.length);
-        fragment = new HiddenFragment(Utils.IMAGENES_PUBLICIDAD_VERTICAL_IDS.length);
+        fragment = new HiddenFragment(Utils.IMAGENES_NEGOCIO_IDS.length);
         FragmentTransaction transaction = fg.beginTransaction();
         transaction.add(fragment, HIDDEN_FRAGMENT_TAG);
         transaction.commit();
@@ -757,8 +805,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
 
 	@Override
 	public void onProgressUpdate(int index) {
-		//imgPublicidad.setImageResource(Utils.IMAGENES_NEGOCIO_IDS[index]);
-		imgPublicidad.setImageResource(Utils.IMAGENES_PUBLICIDAD_VERTICAL_IDS[index]);
+		imgPublicidad.setImageResource(Utils.IMAGENES_NEGOCIO_IDS[index]);
         Animation rotateImage = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         imgPublicidad.startAnimation(rotateImage);
 	}
@@ -774,5 +821,24 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
 		// TODO Auto-generated method stub
 		
 	}
+	
+	private int getVista(long id) {
+		int vista = 1;
+		
+        ExternalDbOpenHelper dbConexion = new ExternalDbOpenHelper(this, "comercio.db");
+        database = dbConexion.openDataBase();
+        Cursor comercioCursor = database.rawQuery("SELECT vista FROM comercio WHERE id = ?", new String[] { Long.toString(id) });
+        
+        comercioCursor.moveToFirst();
+	    while (!comercioCursor.isAfterLast()) {
+	    	vista  = comercioCursor.getInt(0);
+	    	
+	    	comercioCursor.moveToNext();
+	    }	    
+        
+        comercioCursor.close();
+        database.close();
+        return vista;
+    }
 
 }

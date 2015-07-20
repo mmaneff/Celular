@@ -2,7 +2,6 @@
 <resources>
 	<array name="icons">
         <item>@drawable/action_bar_menu</item>
-        <item>@drawable/banner2</item>
     </array>
     <array name="colors">
         <item>#FFFF0000</item>

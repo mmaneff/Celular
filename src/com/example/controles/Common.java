@@ -30,6 +30,7 @@ public class Common {
 	public static Drawable getDrawableColorByName(Resources resources, String color) {
 		Drawable itemColor = null;
 		try {
+			
 			if(color.equals("brown"))
 				itemColor = resources.getDrawable(R.color.brown_400);
 			else if(color.equals("green"))
@@ -58,6 +59,7 @@ public class Common {
 				itemColor = resources.getDrawable(R.color.deepPurple_400);
 			else 
 				itemColor = resources.getDrawable(R.color.grey_400);
+				
 		}
 		catch(Exception ex) {
 			Log.e(LOGCAT, ex.getMessage());
@@ -73,7 +75,8 @@ public class Common {
 	 */
 	public static int getColorByName(Resources resources, String color) {
 		int itemColor = resources.getColor(R.color.white);
-		try {			
+		try {		
+			
 			if(color.equals("brown"))
 				itemColor = resources.getColor(R.color.brown_400);
 			else if(color.equals("green"))
@@ -101,7 +104,8 @@ public class Common {
 			else if(color.equals("deep_purple"))
 				itemColor = resources.getColor(R.color.deepPurple_400);
 			else 
-				itemColor = resources.getColor(R.color.grey_400);				
+				itemColor = resources.getColor(R.color.grey_400);
+								
 		}
 		catch(Exception ex) {
 			Log.e(LOGCAT, ex.getMessage());
@@ -118,6 +122,7 @@ public class Common {
 	public static Drawable getBackgroundByName(Resources resources, String color) {
 		Drawable itemColor = null;
 		try {
+			
 			if(color.equals("brown"))
 				itemColor = resources.getDrawable(R.drawable.item_color_brown);
 			else if(color.equals("green"))
@@ -146,6 +151,7 @@ public class Common {
 				itemColor = resources.getDrawable(R.drawable.item_color_deep_purple);
 			else 
 				itemColor = resources.getDrawable(R.drawable.item_color_grey);
+				
 		}
 		catch(Exception ex) {
 			Log.e(LOGCAT, ex.getMessage());
@@ -163,7 +169,8 @@ public class Common {
 	public static Drawable getImageByName(Resources resources, String imagen) {
 		Drawable iconoCategoria = null;
 		
-		try {			
+		try {	
+			
 			TypedArray iconos = resources.obtainTypedArray(R.array.imagenes);
 		    		    
 		    for(int i = 0; i <= iconos.length() - 1; i++) {
@@ -173,7 +180,8 @@ public class Common {
 			    	iconoCategoria = iconos.getDrawable(i);
 			    	break;
 			    }
-		    }		    
+		    }	
+		    	    
 		}
 		catch(Exception ex) {
 			Log.e(LOGCAT, ex.getMessage());

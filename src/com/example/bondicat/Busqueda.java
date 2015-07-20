@@ -501,45 +501,86 @@ public class Busqueda extends Activity implements LocationListener{
         ExternalDbOpenHelper dbConexion = new ExternalDbOpenHelper(this, "comercio.db");
         database = dbConexion.openDataBase();
 //        Cursor comercioCursor = database.rawQuery("SELECT * FROM comercio WHERE upper(razonSocial) LIKE ?", new String[] {parametroBusqueda.toUpperCase()});
-        String selectQuery = " select * from comercio where RAZONSOCIAL like '%" + parametroBusqueda + "%'";
+        String selectQuery = " select id, correoelectronico, detalle, domicilio, latitud, longitud, razonsocial, sitioweb, telefono, telefono2, telefono3 from comercio where RAZONSOCIAL like '%" + parametroBusqueda + "%'";
         Cursor comercioCursor = database.rawQuery(selectQuery, null);
         System.out.println("Cantidad de comercios encontrados = " + comercioCursor.getCount());
         if(comercioCursor.moveToFirst()) {
             do {
-                Comercio comercio = new Comercio();
+            	Comercio comercio = new Comercio();
                 if(comercioCursor.getString(0) != null) {
                     comercio.setId(comercioCursor.getLong(0));
+                }                
+                
+                if(comercioCursor.getString(1) != null) {
+                    comercio.setCorreoElectronico(comercioCursor.getString(1));
                 }
+                else {
+                	comercio.setCorreoElectronico("");
+                }
+                	
                 if(comercioCursor.getString(2) != null) {
-                    comercio.setCorreoElectronico(comercioCursor.getString(2));
+                    comercio.setDetalle(comercioCursor.getString(2));
                 }
+                else {
+                	comercio.setDetalle("");
+                }
+                
                 if(comercioCursor.getString(3) != null) {
-                    comercio.setDetalle(comercioCursor.getString(3));
+                    comercio.setDomicilio(comercioCursor.getString(3));
                 }
+                else {
+                	comercio.setDomicilio("");
+                }
+                
                 if(comercioCursor.getString(4) != null) {
-                    comercio.setDomicilio(comercioCursor.getString(4));
+                    comercio.setLatitud(comercioCursor.getString(4));
                 }
+                else {
+                	comercio.setLatitud("");
+                }
+                
                 if(comercioCursor.getString(5) != null) {
-                    comercio.setLatitud(comercioCursor.getString(5));
+                    comercio.setLongitud(comercioCursor.getString(5));
                 }
+                else {
+                	comercio.setLongitud("");
+                }
+                
                 if(comercioCursor.getString(6) != null) {
-                    comercio.setLongitud(comercioCursor.getString(6));
+                    comercio.setRazonSocial(comercioCursor.getString(6));
                 }
+                else {
+                	comercio.setRazonSocial("");
+                }
+                
                 if(comercioCursor.getString(7) != null) {
-                    comercio.setRazonSocial(comercioCursor.getString(7));
+                    comercio.setSitioWeb(comercioCursor.getString(7));
                 }
+                else {
+                	comercio.setSitioWeb("");
+                }
+                
                 if(comercioCursor.getString(8) != null) {
-                    comercio.setSitioWeb(comercioCursor.getString(8));
+                    comercio.setTelefono(comercioCursor.getString(8));
                 }
+                else {
+                	comercio.setTelefono("");
+                }
+                
+                if(comercioCursor.getString(9) != null) {
+                	comercio.setTelefono2(comercioCursor.getString(9));
+                }
+                else {
+                	comercio.setTelefono2("");
+                }
+                
                 if(comercioCursor.getString(10) != null) {
-                    comercio.setTelefono(comercioCursor.getString(10));
+                	comercio.setTelefono3(comercioCursor.getString(10));
                 }
-                if(comercioCursor.getString(11) != null) {
-                	comercio.setTelefono2(comercioCursor.getString(11));
+                else {
+                	comercio.setTelefono3("");
                 }
-                if(comercioCursor.getString(12) != null) {
-                	comercio.setTelefono3(comercioCursor.getString(12));
-                }
+                
                 System.out.println("idComercioEncontrado=" + comercio.getId());
                 System.out.println("razonSocialEncontrada=" + comercio.getRazonSocial());
                 comercios.add(comercio);

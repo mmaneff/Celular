@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange_600"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:id="@+id/dato_1" >
     
     <LinearLayout 
         android:layout_width="match_parent"
@@ -43,7 +44,6 @@
             android:id="@+id/imageView2"
             android:layout_width="250dp"
             android:layout_height="fill_parent"
-            android:src="@drawable/elpostino2"
             android:scaleType="fitXY" />
         
         <TextView
@@ -77,22 +77,10 @@
             android:textStyle="bold"
             android:gravity="center"
             android:textSize="@dimen/font_detalle" />
-        
-		<TextView
-		    android:id="@+id/txtDetalle"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_margin="1dp"
-		    android:text="@string/tvDetalle"
-		    android:textAppearance="?android:attr/textAppearanceMedium"
-		    android:textColor="@color/blanco"
-		    android:textStyle="bold"
-		    android:gravity="center"
-            android:textSize="@dimen/font_detalle_2" />
 		
 		<TextView
 		    android:id="@+id/txtDireccion"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_margin="1dp"
 		    android:text="@string/tvDireccion"
@@ -104,7 +92,7 @@
 		
 		<TextView
 		    android:id="@+id/txtTelefono"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_margin="1dp"
 		    android:text="@string/tvTelefono"
@@ -116,35 +104,12 @@
 		
 		<TextView
 		    android:id="@+id/txtLocalidad"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_margin="1dp"
 		    android:text="@string/tvLocalidad"
 		    android:textAppearance="?android:attr/textAppearanceMedium"
 		    android:textColor="@color/blanco"
-		    android:gravity="center"
-            android:textSize="@dimen/font_detalle_2" />
-		
-		<TextView
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_margin="1dp"
-		    android:text="@string/tvHorario1"
-		    android:textAppearance="?android:attr/textAppearanceMedium" 
-		    android:textColor="@color/blanco"
-		    android:textStyle="bold"
-		    android:gravity="center"
-            android:textSize="@dimen/font_detalle_2" />
-		
-		<TextView
-		    android:id="@+id/txtHorario"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_margin="1dp"
-		    android:text="@string/tvHorario2"
-		    android:textAppearance="?android:attr/textAppearanceMedium" 
-		    android:textColor="@color/blanco"
-		    android:textStyle="bold"
 		    android:gravity="center"
             android:textSize="@dimen/font_detalle_2" />
 		

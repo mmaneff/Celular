@@ -97,8 +97,7 @@
             android:id="@+id/imgPublicidad"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/publicidad"
-            android:background="@drawable/pb_1"
+            android:background="@drawable/publicidad_horizontal_3"
             android:scaleType="fitXY" />
     </LinearLayout>
 

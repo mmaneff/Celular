@@ -104,8 +104,7 @@
             	android:id="@+id/imgPublicidad"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/imanodisp2"
-                android:background="@drawable/pb_fibertel"
+                android:background="@drawable/publicidad_vertical_2"
                 android:scaleType="fitXY" />
         </LinearLayout>
     </LinearLayout>

@@ -31,10 +31,10 @@
   	<dimen name="font_boton_detalle">18sp</dimen>
   	
   	<!-- Datos Activity 2 -->
-  	<dimen name="font_titulo_vista_2">30sp</dimen>
+  	<dimen name="font_titulo_vista_2">32sp</dimen>
   	<dimen name="font_seg_titulo_vista_2">28sp</dimen>
-  	<dimen name="font_direccion_vista_2">26sp</dimen>
-  	<dimen name="font_telefono_vista_2">26sp</dimen>
-  	<dimen name="font_localidad_vista_2">24sp</dimen>
+  	<dimen name="font_direccion_vista_2">28sp</dimen>
+  	<dimen name="font_telefono_vista_2">28sp</dimen>
+  	<dimen name="font_localidad_vista_2">26sp</dimen>
   	<dimen name="font_boton_vista_2">18sp</dimen>
 </resources>

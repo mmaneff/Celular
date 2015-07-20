@@ -75,7 +75,6 @@
 			    android:id="@+id/imgPublicidad"
 			    android:layout_width="fill_parent"
 			    android:layout_height="fill_parent"			    
-			    android:src="@drawable/imanodisp2"
 			    android:scaleType="fitXY" />
         
 		</LinearLayout>
