@@ -60,6 +60,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
     String latitud;
     String subcategoria;
     int colorTexto;
+    String colorName;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,8 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 	int vista = getVista(id);
                     Bundle bundle = new Bundle();
                     bundle.putLong("ID", id );
-                    bundle.putInt("datos_activity", vista);                    
+                    bundle.putInt("datos_activity", vista);
+                    bundle.putString("colorName", colorName);
                     Intent intent = new Intent(Negocios.this, Datos.class);
                     intent.putExtras(bundle);
                     startActivity(intent);
@@ -107,6 +109,8 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
                 findFragmentByTag(HIDDEN_FRAGMENT_TAG);
     }
 
+    
+    
     private void CargarLista2() {
         // TODO Auto-generated method stub
         ArrayList<ItemNegocio> itemslista = obtenerItems2();
@@ -234,6 +238,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
             //rl.setBackgroundColor(Color.parseColor("#2F5279"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
         	colorTexto = R.color.red_800;
+        	colorName = "red_900";
         } else if( (nombre.equals("COMPRAVENTA") || (nombre.equals("MECANICO")) ||
                 nombre.equals("MOTO")) || nombre.equals("NEUMATICOS") ||
                 nombre.equals("REPUESTOS") || nombre.equals("COMPRA/VENTA") || 
@@ -241,25 +246,27 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#8B4788"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_800));
         	colorTexto = R.color.orange_800;
+        	colorName = "orange_900";
         } else if( nombre.equals("PRESTAMOS") || nombre.equals("BANCOS")) {
         	//rl.setBackgroundColor(Color.parseColor("#028228"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
         	colorTexto = R.color.yellow_800;
+        	colorName = "yellow_900";
         } else if( (nombre.equals("CAMA SOLAR") || (nombre.equals("CENTRO DE ESTETICA")) ||
                 nombre.equals("COSMETICOS/TOLOGOS")) || nombre.equals("PELUQUERIA") ||
-                nombre.equals("PERFUMERIA") || nombre.equals("RELOJERIA/JOYERIA") || 
-                nombre.equals("MAKE UP") || nombre.equals("MODISTA") || nombre.equals("PODOLOGO") ) {
+                nombre.equals("PERFUMERIA") || nombre.equals("MAKE UP") || 
+                nombre.equals("MODISTA") || nombre.equals("PODOLOGO") ) {
         	//rl.setBackgroundColor(Color.parseColor("#6B37C1"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
         	colorTexto = R.color.green_800;
-        } else if( (nombre.equals("CASA DE DEPORTES") || (nombre.equals("IND DEP")) ||
-                nombre.equals("INDUMENTARIA DEPORTIVA")) || nombre.equals("INDUMENTARIA MASCULINA") ||
-                nombre.equals("INDUMENTARIA MUJER") || nombre.equals("INDUMENTARIA NIÃ‘O") ||
-                nombre.equals("INDUMENTARIA BEBES/NIÑOS") || nombre.equals("JOYERIA") ||
-                nombre.equals("RELOJERIA/JOYERIA") ) {
+        	colorName = "green_900";
+        } else if( nombre.equals("CASA DE DEPORTES") || nombre.equals("INDUMENTARIA MASCULINA") || 
+        		nombre.equals("INDUMENTARIA MUJER") || nombre.equals("INDUMENTARIA BEBES/NIÑOS") || 
+        		nombre.equals("RELOJERIA/JOYERIA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#EC4700"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.blue_800));
         	colorTexto = R.color.blue_800;
+        	colorName = "blue_900";
         } else if( (nombre.equals("AIRE ACONDICIONADO") || (nombre.equals("AUTOMATIZACION DE PORTONES")) ||
                 nombre.equals("CERRAJERIA")) || nombre.equals("CORRALON") ||
                 nombre.equals("ELECTRICIDAD") || nombre.equals("FERRETERIA") ||
@@ -271,6 +278,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#C60A00"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
         	colorTexto = R.color.purple_800;
+        	colorName = "purple_900";
         } else if( (nombre.equals("AROMATIZANTES") || (nombre.equals("BAZAR")) ||
                 nombre.equals("FUMIGACION")) || nombre.equals("LONERA") ||
                 nombre.equals("MERCERIA/REGALERIA") || nombre.equals("MUEBLES") ||
@@ -280,6 +288,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#AA413E"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
         	colorTexto = R.color.red_800;
+        	colorName = "red_900";
         } else if( (nombre.equals("COLEGIO") || (nombre.equals("INSTITUTO DE INGLES")) ||
                 nombre.equals("LIBRERIA")) || nombre.equals("JARDINES Y MATERNALES") ||
                 nombre.equals("PARTICULARES PRI/SEC") || nombre.equals("PARTICULARES SECUNDARIA") ||
@@ -288,6 +297,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#956500"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
         	colorTexto = R.color.yellow_800;
+        	colorName = "yellow_900";
         } else if( (nombre.equals("BOMBEROS") || (nombre.equals("COMISARIA")) ||
                 nombre.equals("HOSPITAL")) || nombre.equals("MUNICIPALIDAD") ||
                 nombre.equals("POLICIA") || nombre.equals("SERVICIO SACERDOTAL") ||
@@ -295,6 +305,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#006FA4"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
         	colorTexto = R.color.green_800;
+        	colorName = "green_900";
         } else if( (nombre.equals("ALQ. DE BARRAS") || (nombre.equals("ALQ. DE LIVINGS")) ||
                 nombre.equals("CARPAS")) || nombre.equals("CATERING") ||
                 nombre.equals("COTILLON/DISFRAZ") || nombre.equals("DELIVERY DE ALCOHOL") ||
@@ -305,6 +316,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#CC00CC"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
         	colorTexto = R.color.deepPurple_800;
+        	colorName = "deepPurple_900";
         } else if( (nombre.equals("BAR") || (nombre.equals("CAFETERIA")) ||
                 nombre.equals("RESTOBAR")) || nombre.equals("CARNICERIA") ||
                 nombre.equals("EMPANADAS") || nombre.equals("HELADERIA") ||
@@ -315,20 +327,24 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#00AE2C"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
         	colorTexto = R.color.purple_800;
+        	colorName = "purple_900";
         } else if( (nombre.equals("IMPRESIONES") ) ) {
         	//rl.setBackgroundColor(Color.parseColor("#9B2F1C"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
         	colorTexto = R.color.red_800;
+        	colorName = "red_900";
         } else if( (nombre.equals("ABOGADO") || (nombre.equals("AGRIMENSOR")) ||
                 nombre.equals("ARQUITECTO")) || nombre.equals("CONTADOR") ||
                 nombre.equals("VETERINARIO") ) {
         	//rl.setBackgroundColor(Color.parseColor("#76329A"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
         	colorTexto = R.color.yellow_800;
+        	colorName = "yellow_900";
         } else if( (nombre.equals("METROPOLITANA") || (nombre.equals("CIUDADANA"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#326332"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
         	colorTexto = R.color.deepPurple_800;
+        	colorName = "deepPurple_900";
         } else if( (nombre.equals("CENTRO MEDICO") || (nombre.equals("ESPECIALISTA")) ||
                 nombre.equals("FARMACIA")) || nombre.equals("LABORATORIO") ||
                 nombre.equals("NUTRICIONISTA") || nombre.equals("ODONTOLOGO") ||
@@ -338,11 +354,13 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#37618E"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.green_800));
         	colorTexto = R.color.green_800;
+        	colorName = "green_900";
         } else if( (nombre.equals("ALARMAS") || (nombre.equals("SEGUROS")) ||
                 nombre.equals("SERVICIO DE CAMARAS") || (nombre.equals("SERVICIO DE SEGURIDAD"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#864483"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.blue_800));
         	colorTexto = R.color.blue_800;
+        	colorName = "blue_900";
         } else if( (nombre.equals("AIRE ACONDICIONADO") || (nombre.equals("ELECTRICISTA")) ||
                 nombre.equals("ELECTRODOMESTICO")) || nombre.equals("FLETES") ||
                 nombre.equals("GASISTA") || nombre.equals("INMOBILIARIA") ||
@@ -352,6 +370,7 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#A4A400"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.deepPurple_800));
         	colorTexto = R.color.deepPurple_800;
+        	colorName = "deepPurple_900";
         } else if( (nombre.equals("CORREO ARGENTINO") || (nombre.equals("EDET")) ||
                 nombre.equals("GASNOR")) || nombre.equals("SAT") || nombre.equals("AEROPARQUE") || 
                 nombre.equals("ANSES") || nombre.equals("ATENCION AL VECINO") || nombre.equals("CANAL 10") || 
@@ -363,12 +382,14 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
         	//rl.setBackgroundColor(Color.parseColor("#820228"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.purple_800));
         	colorTexto = R.color.purple_800;
+        	colorName = "purple_900";
         } else if( (nombre.equals("LAS PALMERAS") || (nombre.equals("PORTAL")) ||
                 nombre.equals("SOLAR")) || nombre.equals("SOLAR MARCOS PAZ") ||
                 nombre.equals("YERBA BUENA") ) {
         	//rl.setBackgroundColor(Color.parseColor("#029930"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
         	colorTexto = R.color.red_800;
+        	colorName = "red_900";
         }
 	    else if( (nombre.equals("BALLET") || (nombre.equals("BICICLETERIA")) ||
 	            nombre.equals("ARTES MARCIALES")) || nombre.equals("CASA DE DEPORTES") ||
@@ -378,16 +399,19 @@ public class Negocios extends Activity implements LocationListener, HiddenFragme
 	    	//rl.setBackgroundColor(Color.parseColor("#029D9D"));
 	    	tvTituloNegocio.setTextColor(getResources().getColor(R.color.orange_800));
 	    	colorTexto = R.color.orange_800;
+	    	colorName = "orange_900";
 	    } 
 	    else if( (nombre.equals("AGENCIA DE VIAJE") || (nombre.equals("BOLETOS OMNIBUS")) 
         		|| (nombre.equals("HOTEL"))) ) {
         	//rl.setBackgroundColor(Color.parseColor("#333333"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.yellow_800));
         	colorTexto = R.color.yellow_800;
+        	colorName = "yellow_900";
         } else {
         	//rl.setBackgroundColor(Color.parseColor("#836953"));
         	tvTituloNegocio.setTextColor(getResources().getColor(R.color.red_800));
         	colorTexto = R.color.red_800;
+        	colorName = "red_900";
         }
     }
 

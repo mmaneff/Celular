@@ -63,11 +63,11 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 				Bundle bundle = new Bundle();
 				bundle.putLong("ID", idnegocio);
 				bundle.putString("razonSocial", comercio.getRazonSocial());
-				if(comercio.getLatitud() != null) {
+				if(comercio.getLatitud() != null && comercio.getLatitud().trim().length() > 0) {
 					bundle.putDouble("latitud",
 							Double.parseDouble(comercio.getLatitud()));
 				}
-				if(comercio.getLongitud() != null) {
+				if(comercio.getLongitud() != null && comercio.getLongitud().trim().length() > 0) {
 					bundle.putDouble("longitud",
 							Double.parseDouble(comercio.getLongitud()));
 				}
@@ -204,35 +204,47 @@ public class Datos extends android.support.v4.app.FragmentActivity {
 		Button btnMapa = (Button) findViewById(R.id.btnMapa);
 		Button btnFavorito = (Button) findViewById(R.id.btnLlamar);
 		
-		if(colorName.equalsIgnoreCase("red_900")) {
+		if(colorName.equals("red_900")) {
 			dato_1.setBackgroundColor(getResources().getColor(R.color.red_800));
 			btnRegresar.setBackgroundColor(getResources().getColor(R.color.red_900));
 			btnMapa.setBackgroundColor(getResources().getColor(R.color.red_900));
 			btnFavorito.setBackgroundColor(getResources().getColor(R.color.red_900));
 		} 
-		else if(colorName.equalsIgnoreCase("orange_900")) {
+		else if(colorName.equals("orange_900")) {
 			dato_1.setBackgroundColor(getResources().getColor(R.color.orange_800));
 			btnRegresar.setBackgroundColor(getResources().getColor(R.color.orange_900));
 			btnMapa.setBackgroundColor(getResources().getColor(R.color.orange_900));
 			btnFavorito.setBackgroundColor(getResources().getColor(R.color.orange_900));
 		} 
-		else if(colorName.equalsIgnoreCase("yellow_900")) {
+		else if(colorName.equals("yellow_900")) {
 			dato_1.setBackgroundColor(getResources().getColor(R.color.yellow_800));
 			btnRegresar.setBackgroundColor(getResources().getColor(R.color.yellow_900));
 			btnMapa.setBackgroundColor(getResources().getColor(R.color.yellow_900));
 			btnFavorito.setBackgroundColor(getResources().getColor(R.color.yellow_900));
 		}
-		else if(colorName.equalsIgnoreCase("green_900")) {
+		else if(colorName.equals("green_900")) {
 			dato_1.setBackgroundColor(getResources().getColor(R.color.green_800));
 			btnRegresar.setBackgroundColor(getResources().getColor(R.color.green_900));
 			btnMapa.setBackgroundColor(getResources().getColor(R.color.green_900));
 			btnFavorito.setBackgroundColor(getResources().getColor(R.color.green_900));
 		}
-		else if(colorName.equalsIgnoreCase("blue_900")) {
+		else if(colorName.equals("blue_900")) {
 			dato_1.setBackgroundColor(getResources().getColor(R.color.blue_800));
 			btnRegresar.setBackgroundColor(getResources().getColor(R.color.blue_900));
 			btnMapa.setBackgroundColor(getResources().getColor(R.color.blue_900));
 			btnFavorito.setBackgroundColor(getResources().getColor(R.color.blue_900));
+		}
+		else if(colorName.equals("deepPurple_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.deepPurple_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.deepPurple_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.deepPurple_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.deepPurple_900));
+		}
+		else if(colorName.equals("purple_900")) {
+			dato_1.setBackgroundColor(getResources().getColor(R.color.purple_800));
+			btnRegresar.setBackgroundColor(getResources().getColor(R.color.purple_900));
+			btnMapa.setBackgroundColor(getResources().getColor(R.color.purple_900));
+			btnFavorito.setBackgroundColor(getResources().getColor(R.color.purple_900));
 		}
 	}
 

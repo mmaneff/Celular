@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Busqueda extends Activity implements LocationListener{
@@ -51,6 +52,9 @@ public class Busqueda extends Activity implements LocationListener{
         //Recupero los datos de la pantalla categorias
         Bundle bundle = this.getIntent().getExtras();
         busqueda=bundle.getString("busqueda");
+        
+        TextView tvTitulo = (TextView) findViewById(R.id.tvTituloNegocio);
+        tvTitulo.setText("Negocios encontrados");
         
         //System.out.println(nombre);
         //iniciarServicio();
